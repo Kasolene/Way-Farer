@@ -1,17 +1,72 @@
 // SIGN UP FORM VALIDATION
-const loginValidation = () => {
-   let email = document.getElementById("username").value;
-   let password = document.getElementById("password").value;
-    let mailformat = /^([a-z 0-9\.-]+)@([a-z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
-    if(mailformat.email(email))
-    {
-        document.getElementById("requerement").innerHTML ="Valid Email"
-    }
-    else{
-        document.getElementById("requerement").innerHTML ="Invalid Email"
-    }
+
+// SELECTING ALL TEXT ELEMENTS
+const firstName = document.getElementById('fname');
+const lastName = document.getElementById('lname');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const passwordConfirm = document.getElementById('confirm-password');
+
+// SELECTING ALL ERROR DISPLAY ELEMENTS
+const firstNameError = document.getElementById('fname_error');
+const lastNameError = document.getElementById('lname_error');
+const emailError = document.getElementById('email_error');
+const passwordError = document.getElementById('pwd_error');
+const passwordConfirmError = document.getElementById('pwd_confirm_error');
+
+// SETTING ALL EVENT LISTENERS
+firstName.addEventListener('blur',firstNameVerify, true);
+lastName.addEventListener('blur',lastNameVerify, true);
+email.addEventListener('blur',emailVerify, true);
+password.addEventListener('blur',passwordVerify, true);
+
+// Validation function 
+const formValidation = () => {
+  
+  // validate first name
+  if (firstName.value == "") {
+    firstNameError.textContent = "Must be at least 3 characters";
+    firstName.focus();
+    return false;
+  }
+   
+    // validate first name
+  if (firstName.value.length < 3) {
+    firstNameError.textContent = "Must be at least 3 characters";
+    firstName.focus();
+    return false;
+  }
+
+  // validate Lastname
+  if (lastName.value == "") {
+    lastNameError.textContent = "Must be at least 3 characters";
+    lastName.focus();
+    return false;
+  }
+   
+    // validate Lastname
+  if (lastName.value.length < 3) {
+    lastNameError.textContent = "Must be at least 3 characters";
+    lastName.focus();
+    return false;
+  }
+
+    // validate email
+    if (email.value == "") {
+        emailError.textContent = "Must be at least 3 characters";
+        email.focus();
+        return false;
+      }
     
 }
+
+
+
+
+
+
+
+
 
 // ADMIN ASIDE MENU 
 const opensidemenu = () =>{
@@ -62,8 +117,3 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
-// BACK AND ADD NEW TRIP BUTTON
-
-const changeButton = () =>{
-  document.getElementById('trip').name ="Back";
-}
