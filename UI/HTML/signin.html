@@ -3,12 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sing Up Farer</title>
+    <title>Sign In - Way Farer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../CSS/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../CSS/responsive.css">
-    
 </head>
 <body>
         <header>
@@ -35,29 +34,23 @@
             </header>
     <div class="container-1">
         <div class="index-banner">
-            <div class="signup-page">
-                <div class="form">
-                    <h1>Sign Up</h1>
-                    <form class="signup-form">
-                        <input type="text" id="fname" placeholder="First Name"/>
-                        <p id="fname_error" class="requerement"></p>
-                        <input type="text" id="lname" placeholder="Last Name"/>
-                        <p id="lname_error" class="requerement"></p>
-                        <input type="text" id="email" placeholder="Email"/>
-                        <p id="email_error" class="requerement"></p>
-                        <input type="password" id="password" placeholder="Password"/>
-                        <p id="pwd_error" class="requerement"></p>
-                        <input type="password" id="confirm-password" placeholder="Confirm Password"/>
-                        <p id="pwd_confirm_error" class="requerement"></p>
-                        <button onclick="formValidation()" >Create</button>
-                        <p class="message">Already Signed Up ? <a href="./signin.html">Sign In</a></p> 
-                    </form>
-                </div>
+            <div class="signin-page">
+                    
+                    <div class="form">
+                        <h1>Sign In</h1>
+                        <form class="login-form">
+                            <p id="requerement" class="requerement"></p>
+                            <input id="username" type="text" placeholder="User Name"/>
+                            <input id="password" type="password" placeholder="Password"/>
+                            <button type="submit" id="login" onclick="loginValidation()">Login</button>
+                            <p class="message">Don't have an Account ? <a href="./signup.html">Sign Up</a></p>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>
     <footer>
-           
+            
             <div class="contact">
                     <ul>
                         <li>
@@ -74,7 +67,8 @@
                                 © 2019 WayFarer. All right reserved. Designed by <span>Nicolas Kasolene</span>
                             </p>
                 </div>
-        </footer>
-                <script src="../JS/script.js"></script>
-    </body>
+    </footer>
+            <script src="../JS/script.js"></script>
+    
+</body>
 </html>
