@@ -1,0 +1,666 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    header{
+        background-color: #111;
+        width: 100%; 
+        height: 70px;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        box-shadow: 0 4px 6px hsla(0, 0%, 0%, .2);
+        
+    }
+    
+    header .header-brand {
+        width: 20%;
+        display: flex;
+        float: left;
+    }
+    .brand {
+        margin: 15px;
+        color: dodgerblue;
+        text-align: left;
+        font-size: 35px; 
+        font-weight: 900;
+        text-transform: uppercase;
+        padding-right: 8px;
+        
+    }
+    header .header-nav {
+        width: 55%;
+        justify-content: center;
+        
+    }
+
+     
+    header .header-login {
+        width: 25%;
+        margin-right: 25px;
+    }
+
+ /* INDEX  */
+
+ .index-banner {
+  height: calc(100vh - 100px);
+  
+}
+
+.index-banner h2{
+ font-size: 60px;
+ font-weight: 800;
+ margin: 50px;
+}
+.index-banner h1{
+  font-size: 30px;
+  font-weight: 800; 
+  line-height: 50px;
+  margin: 40px;
+}
+.banner-login a button {
+
+  border: 2px solid #fff;
+  width: 150px;
+  height:50px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  
+}
+    /*  Card */
+    .panel-body .cards{
+      padding-left: 1%;
+    
+  }
+     .panel-body .cards .card{
+        
+      margin: 1%;
+      margin-top:20px;
+    }
+    .card{
+
+        width:30%;
+        border-radius:5px 5px 5px 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+        font-family: inherit;
+        font-size:16px;
+    
+      }
+      .card .card-header{
+        widows: 100%;
+        padding: 10px 20px;
+        border-radius:5px 5px 0px 0px;
+        display: flex;
+        background-color: #dbdbdb;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+       
+      }
+      .prop{
+        font-weight: bold;
+        font-family: inherit;
+      }
+      .card-header .trip-id{
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .card-header .status{
+        font-weight: bold;
+        margin-top: -3px;
+        
+      }
+     
+      .card-header .status .status-content{
+        color:green;
+        
+      }
+      .card .card-body{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      }
+    
+      .card-body .trip .trip-avatar{
+        width:100px;
+        height:80px;
+        text-align: center;
+        background: #fff;
+        margin-right:10px;
+        color: #111;
+        font-size: 75px;
+        padding: 5px;
+      } 
+      #title{
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          padding-top: 20px;
+          
+      }
+      .card-footer{
+        padding: 6px 6px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .card-footer button{
+        cursor: pointer;
+        font-size:.9em;
+        font-family: inherit;
+        width: 110px;
+        height: 30px;
+        padding:2px 0;
+        margin-left:15px;
+        border-radius: 5px;
+        border:0 solid transparent;
+        color:white;
+        /* background: #1ca3ec; */
+        background:rgba(15, 121, 15, 0.877);
+      }
+      .card-footer button.cancel{
+        background: rgba(206, 19, 19, 0.897);
+      }
+      .card-footer button.details{
+        background: #3d8cb6;
+      }
+
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    header{
+        background-color: #111;
+        width: 100%; 
+        height: 70px;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        box-shadow: 0 4px 6px hsla(0, 0%, 0%, .2);
+        
+    }
+    
+    header .header-brand {
+        width: 20%;
+        display: flex;
+        float: left;
+    }
+    
+    header .header-nav {
+        width: 55%;
+        justify-content: center;
+    }
+
+     
+    header .header-login {
+        width: 25%;
+        margin-right: 25px;
+    }
+    
+    /* INDEX  */
+
+.index-banner {
+  height: calc(100vh - 100px);
+  
+}
+
+.index-banner h2{
+ font-size: 60px;
+ font-weight: 800;
+ margin: 50px;
+}
+.index-banner h1{
+  font-size: 30px;
+  font-weight: 800; 
+  line-height: 50px;
+  margin: 40px;
+}
+.banner-login a button {
+
+  border: 2px solid #fff;
+  width: 150px;
+  height:50px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  
+}
+
+    
+
+
+    /*  Card */
+    .panel-body .cards{
+        padding-left: 1%x;
+        /* border: 1px solid red; */
+        
+    }
+    .card{
+
+        width:47%;
+        border-radius:5px 5px 5px 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+        font-family: inherit;
+        font-size:16px;
+        margin-bottom: .8em;
+        margin-left: 1%;
+    
+      }
+      .card .card-header{
+        widows: 100%;
+        padding: 10px 20px;
+        border-radius:5px 5px 0px 0px;
+        display: flex;
+        background-color: #dbdbdb;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+       
+      }
+
+
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    header{
+        background-color: #111;
+        width: 100%; 
+        height: 70px;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        box-shadow: 0 4px 6px hsla(0, 0%, 0%, .2);
+        
+    }
+    
+    header .header-brand {
+        width: 20%;
+        display: flex;
+        float: left;
+    }
+    
+    header .header-nav {
+        width: 55%;
+        justify-content: center;
+    }
+
+     
+    header .header-login {
+        width: 25%;
+        margin-right: 25px;
+    }
+    
+   /* INDEX  */
+
+.index-banner {
+  height: calc(70vh - 70px);
+  
+}
+
+.index-banner h2{
+ font-size: 50px;
+ font-weight: 800;
+ line-height: 60px;
+ margin: 50px;
+}
+.index-banner h1{
+  font-size: 25px;
+  font-weight: 70; 
+  line-height: 40px;
+  margin: 50;
+}
+.banner-login a button {
+
+  border: 2px solid #fff;
+  width: 150px;
+  height:50px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  
+}
+
+
+    /*  Card */
+    .panel-body .cards{
+        padding-left: 1%x;
+        /* border: 1px solid red; */
+        
+    }
+    .card{
+
+        width:47%;
+        border-radius:5px 5px 5px 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+        font-family: inherit;
+        font-size:16px;
+        margin-bottom: .8em;
+        margin-left: 1%;
+    
+      }
+      .card .card-header{
+        widows: 100%;
+        padding: 10px 20px;
+        border-radius:5px 5px 0px 0px;
+        display: flex;
+        background-color: #dbdbdb;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+       
+      }
+
+
+  }
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+
+    header{
+      background-color: #111;
+      width: 100%; 
+      height: 110px;
+      box-shadow: 0 4px 6px hsla(0, 0%, 0%, .2);
+      
+      
+  }
+  
+  header .header-brand {
+    width: 100%; 
+    padding-left: 150px;
+    
+  }
+  .brand {
+    margin: 20px;
+    font-size: 40px; 
+
+    
+}
+  header .header-nav {
+      width: 100%; 
+  }
+
+   
+  header .header-login {
+    width: 100%; 
+    padding-right: 5px;
+    padding-top: 2px;
+      
+  }
+  .header-login a button {
+   
+    width: 75px;
+    height: 30px;
+    font-size: 12px;
+    
+}
+/* INDEX  */
+
+.index-banner {
+  height: calc(60vh - 60px);
+  
+}
+
+.index-banner h2{
+ font-size: 35px;
+ font-weight: 600;
+ line-height: 45px;
+ margin: 25px;
+}
+.index-banner h1{
+  font-size: 17px;
+  font-weight: 50; 
+  line-height: 25px;
+  margin: 20px;
+}
+
+    /*  Card */
+ 
+  
+
+    .panel-body .cards{
+      padding-left: 5%;
+      
+  }
+  .card{
+
+      min-width:90%;
+      border-radius:5px 5px 5px 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+      font-family: inherit;
+      font-size:16px;
+      margin-bottom: .8em;
+      margin-left: 1%;
+  
+    }
+    .card .card-header{
+      widows: 100%;
+      padding: 10px 20px;
+      border-radius:5px 5px 0px 0px;
+      display: flex;
+      background-color: #dbdbdb;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+     
+    }
+    .container-trip {
+     
+      width: 100%;
+      
+    }
+
+    .copy_right {   
+
+      font-size: 13px;
+     
+  }
+    
+  }
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    header{
+      background-color: #111;
+      width: 100%; 
+      height: 160px;
+      box-shadow: 0 4px 6px hsla(0, 0%, 0%, .2);
+      
+  }
+  
+  header .header-brand {
+    width: 100%; 
+    padding-left: 50px;
+    
+  }
+  .brand {
+    margin: 20px;
+    font-size: 40px; 
+
+}
+  header .header-nav {
+      width: 100%; 
+  }
+
+   
+  header .header-login {
+  
+    width: 70%;
+    padding-top: 45px;
+      
+  }
+  .header-login button {
+   
+    width: 75px;
+    height: 30px;
+    font-size: 12px;
+
+    
+}
+
+
+/* INDEX  */
+
+.index-banner {
+  height: calc(50vh - 50px);
+  
+}
+
+.index-banner h2{
+ font-size: 35px;
+ font-weight: 500;
+ line-height: 45px;
+ color: #fff;
+ text-align: center;
+ text-shadow: 2px 2px 5px #111;
+ margin: 10px;
+}
+.index-banner h1{
+  font-size: 15px;
+  font-weight: 50; 
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 8px #111;
+  padding: 0px 10px 0px 10px;
+  margin: 0px;
+}
+
+/* SIGN IN */
+
+.form{
+  position: relative;
+  z-index: 1;
+  background:rgba(8, 8, 8, 0.8);
+  border: 1px solid #111;
+  width: 100%;
+  padding: 10px 45px 10 45px;
+  text-align: center;
+}
+
+.form input{
+  margin: 0 0 10px;
+  padding: 10px;
+  font-size: 12px;
+}
+.form button{
+  padding: 12px;
+  font-size: 12px;
+}
+
+.form .message{
+  margin: 12px;
+  font-size: 12px;
+}
+.form h1{
+  margin: 12px;
+
+}
+
+.section-container .section-body .panel .panel-heading{
+  background: #e4e2e2; 
+  padding:0px 15px 0px 15px;  
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+  display: block;
+  
+  
+}
+.panel-heading .panel-heading-tittle {
+
+  justify-content: left;
+  width: 100%;
+  margin-bottom: -20px;
+  padding-top:5px;
+
+}
+
+.panel-heading .filters{
+  justify-content: right;
+  width: 100%;
+  display: flex;
+  
+}
+.comb-container{
+  margin: 15px auto ;
+  font-size: 13px;
+}
+
+    .card{
+
+      width:95%;
+      font-size:12px;
+    }
+    .card .card-header{
+      widows: 100%;
+     
+    }
+    .container-trip {
+     
+      width: 100%;
+      
+    }
+
+    .card-footer button{
+  
+      width: 90px;
+
+    }
+    
+.copy_right {   
+
+    font-size: 12px;
+   
+}
+.modal{
+  
+  min-width:280px;
+  max-width: 40%;
+}
+.modal.active{
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-header{
+  padding: 10px;
+}
+.modal-header .tittle{
+      font-size: 16px;
+}
+
+.modal-body{
+  padding: 5px 10px;
+}
+.modal-body h3,h4{
+  font-size: 14px;
+  text-align: center;
+}
+
+.modal-body div {
+  margin:10px;
+  font-size: 12px;
+}
+.modal-body div button {
+
+  font-size:12px;
+  width: 100px;
+  height: 30px;
+  padding:2px 0;
+  border-radius: 2px;
+
+}
+  }
