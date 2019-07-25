@@ -1,0 +1,772 @@
+
+* {
+    text-decoration: none;
+    
+}
+
+body{
+    background-color: #fff;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+}
+header{
+    background-color: #111;
+    width: 100%; 
+    height: 70px;
+    position: relative;
+    justify-content: center;
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, .2);
+}
+
+header .header-brand {
+    width: 15%;
+}
+.brand {
+    margin: 15px;
+    color: dodgerblue;
+    font-size: 35px; 
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-right: 8px;
+    
+}
+header .header-nav {
+    width: 35%;
+    justify-content: center;
+}
+
+ 
+header .header-login {
+    width: 20%;
+}
+
+header .header-nav ul{
+    margin: 20px 0px 0px 20px;
+    float: left;
+    position: absolute;
+}
+header .header-nav ul li {
+    display:inline-block;
+    list-style: none;
+    padding:  0 15px;
+    height: 30px;
+}
+header .header-nav ul li a {
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+header .header-nav ul li .active{
+    border-bottom: 2px solid dodgerblue;
+    padding-bottom: 10px;
+}
+header .header-login a {
+    display: block;
+    margin: 15px 5px 15px 0px;
+    position: relative;
+    float: right;
+}
+
+.header-login  a  {
+  
+    background-color:#111;
+ 
+}
+.header-login  a button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    border: 2px solid dodgerblue;
+    width: 80px;
+    height: 35px;
+    background-color:dodgerblue;
+    padding: 5px;
+    color: dodgerblue;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px 4px 4px 4px;
+    
+}
+.header-login .signup button {
+    background:  dodgerblue;
+    color: #fff;
+} 
+.header-login .signin button {
+    background:  #111;
+    color: dodgerblue;
+} 
+
+/* INDEX  */
+
+.index-banner {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background:-webkit-gradient(linear,left top,left bottom,from(rgba(22,22,22,.2)),color-stop(50%,rgba(22,22,22,.7)) to(#161616)),url(../img/bg1.jpg);
+    background:linear-gradient(to top,rgba(22,22,22,.2) 0,rgba(22,22,22,.7) 100%, #161616 100%), url(../img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: table;
+    
+}
+
+.index-banner h2{
+   font-size: 60px;
+   font-weight: 900;
+   line-height: 70px;
+   color: #fff;
+   text-align: center;
+   text-shadow: 2px 2px 8px #111;
+}
+.index-banner h1{
+    font-size: 30px;
+    font-weight: 100; 
+    font-style: italic;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 8px #111;
+ }
+  .banner-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+ .banner-login a {
+
+    margin: 15px 20px 15px 0px;
+    background-color: transparent;
+}
+
+
+.banner-login a button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    border: 1px solid #fff;
+    width: 120px;
+    height:40px;
+    background-color:#fff;
+    padding: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px 4px 4px 4px;
+    
+}
+.banner-login .signup button {
+    background:  #fff;
+    color: #111;
+} 
+.banner-login .signin button {
+    background:  #111;
+    color: #fff;
+} 
+ 
+/*----------------------------------*/
+.container-1 {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    background-image:none;
+}
+/* SIGN IN */
+.signin-page{
+    widows: 360px;
+    padding: 10%;
+    margin: auto;
+}
+.signup-page{
+    padding: 2%;
+
+}
+.form{
+    position: relative;
+    z-index: 1;
+    background:rgba(8, 8, 8, 0.8);
+    border: 1px solid #111;
+    max-width: 350px;
+    margin: 0 auto 100px;
+    padding: 5px 45px 5px 45px;
+    text-align: center;
+}
+.form form p {
+    color: red;
+    margin: 1px;
+}
+.form input{
+    font-family: "Roboto", sans-serif;
+    outline: 1;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form button{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: dodgerblue;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form button:hover,form button:active{
+    background:   dodgerblue;
+}
+.form .message{
+    margin: 15px;
+    color: #fff;
+    font-size: 15px;
+}
+.form .message a{
+    color: dodgerblue;
+    text-decoration: none; 
+
+}
+
+/* CSS */
+
+footer
+{
+	width: 100%;
+	padding: 20px;
+    background-color:#3C4146;
+    border-top: 5px solid #fff;
+    min-height:200px;
+    
+}
+
+
+.copy_right 
+{   
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact
+{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: -15px;
+
+}
+footer .contact li
+{
+    display: inline-block;
+}
+
+.contact  li a 
+{
+    margin: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+
+}
+.contact li a i:hover 
+{
+	color: dodgerblue;
+}
+.copy_right span
+{
+	color: #fff;
+}
+/* LOGGED PAGE*/
+
+header .status-header-login {
+    width: 100%;
+    background-color: #111;
+}
+header .status-header-login .switch {
+    display: flex;
+    float: right;
+    margin: 10px 25px;
+}
+.user-avatar {
+    color: #fff;
+    font-size: 45px;
+}
+.header-login .status-header-login .switch .user-avatar{
+    color: dodgerblue;
+    font-size: 45px;
+}
+/*-------------- */
+/* Container */
+.container {
+    background-color: #fff;
+    width: 100%; 
+    min-height: 700px;
+    display: flex;
+    position: relative;
+
+}
+
+
+.navbar i {
+    color: #fff;
+    padding-left: 25px;
+    margin: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.sidemenu{
+    height: 100%;
+    background: #111;
+    width: 267px;
+    position: fixed ;
+    top: 0;
+    overflow-x: hidden;
+    transition: all 0.50s;
+}
+
+#mainpagecontent{
+    margin-left: 267px;
+}
+.sidemenu a{
+   text-decoration: none;
+   color: #fff;
+   display: block;
+   margin: 0px;
+   padding: 15px;
+   border-bottom:2px solid dodgerblue;
+   text-align: center;
+   font-size: 18px;
+   font-weight: bold;
+}
+.crossbtn {
+    right: 20px;
+    text-align: right !important;
+    font-size: 40px !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+.sidemenu .active{
+    background: dodgerblue;
+    color: #111;
+
+}
+.sidemenu .brand {
+    margin: 0px;
+    color: dodgerblue;
+    text-align: left;
+    font-size: 35px; 
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-right: 8px;
+    border-bottom:2px solid #fff;
+    
+}
+
+
+.container .section {
+
+    background-color: #e4e2e2;
+    width: 100%;
+}
+
+.container .section .section-container {
+    width: 98%;
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
+    min-height: 680px;
+    background-color: #fff;
+}
+
+.container .section .section-container .section-header {
+    border-bottom: 2px solid  dodgerblue;
+    padding: 0;
+    text-transform: uppercase;
+}
+.section-header div{
+    display: inline-block;
+} 
+.section-header-btn {
+    float: right;
+    margin: 25px 10px ;
+    justify-content: center;
+    
+}
+.section-header-btn button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    border: 2px solid dodgerblue;
+    width: 100px;
+    height: 35px;
+    background: dodgerblue;
+    padding: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px 4px 4px 4px;
+    
+}
+
+/* TRIP CARDS */
+.section-container .section-body{
+    margin-top: 5px;
+    width: 100%;
+}
+.section-container .section-body .panel{
+    padding: 0;
+    width: 100%;
+}
+.section-container .section-body .panel .panel-heading{
+    background: #e4e2e2; 
+    padding:0px 15px 0px 15px;  
+    border-radius: 5px 5px 0px 0px;
+    width: 100%;
+    display: flex;
+    
+}
+.panel-heading .panel-heading-tittle {
+
+    justify-content: left;
+    width: 30%;
+}
+
+
+.panel-heading .filters{
+    justify-content: right;
+    width: 70%;
+    display: flex;
+    
+}
+
+
+
+.comb-container{
+    margin: 15px auto ;
+    
+}
+.panel-body{
+    width: 100%;
+    border:1px solid #e4e2e2;
+    padding: 10px;
+    min-height: inherit;
+
+}
+.panel-body .card{
+    display: inline-block;
+    margin: 1%;
+    margin-top:20px;
+    
+}
+.panel-body .cards{
+    padding-left: 1%;
+    
+
+    
+}
+  .card{
+
+    width:30%;
+    border-radius:5px 5px 5px 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    font-family: inherit;
+    font-size:16px;
+    margin-bottom: .8em;
+    margin-left: 0 auto;
+
+
+  }
+  .card .card-header{
+    widows: 100%;
+    padding: 10px 20px;
+    border-radius:5px 5px 0px 0px;
+    display: flex;
+    background-color: #dbdbdb;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   
+  }
+  .prop{
+    font-weight: bold;
+    font-family: inherit;
+  }
+  .card-header .trip-id{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .card-header .status{
+    font-weight: bold;
+    
+  }
+ 
+  .card-header .status .status-content{
+    color:green;
+  }
+  .card .card-body{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .card-body .trip .trip-avatar{
+    width:100px;
+    height:80px;
+    text-align: center;
+    background: #fff;
+    margin-right:10px;
+    color: #111;
+    font-size: 75px;
+    padding: 5px;
+  } 
+  #title{
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      padding-top: 20px;
+      
+  }
+  .card-footer{
+    padding: 6px 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .card-footer button{
+    cursor: pointer;
+    font-size:.9em;
+    font-family: inherit;
+    width: 110px;
+    height: 30px;
+    padding:2px 0;
+    margin-left:15px;
+    border-radius: 5px;
+    border:0 solid transparent;
+    color:white;
+    /* background: #1ca3ec; */
+    background:rgba(15, 121, 15, 0.877);
+  }
+  .card-footer button.cancel{
+    background: rgba(206, 19, 19, 0.897);
+  }
+  .card-footer button.details{
+    background: #3d8cb6;
+  }
+/* Admin Bookings */
+
+.panel-body .booking-card{
+    display: inline-block;
+    margin: 6px;
+    margin-top:20px;
+    
+}
+.booking-card{
+
+    width:300px;
+    border-radius:15px 15px 15px 15px;
+    font-family: inherit;
+    font-size:16px;
+    margin-bottom: .8em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+  }
+  .booking-card .booking-card-header{
+    widows: 100%;
+    padding: 15x 5px;
+    border-radius:5px 5px 0px 0px;
+    display: flex;
+    background-color:dodgerblue;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   
+  }
+
+.booking-card-header .booking-id{
+    font-weight: bold;
+    font-size: 14px;
+    padding: 15px;
+  }
+  .booking-card .booking-card-body{
+    padding: 15px;
+  }
+
+
+
+
+  /* ADD NEW TRIP */
+
+  * {box-sizing: border-box}
+
+/* Add padding to containers */
+.container-trip h3 {
+    color: dodgerblue;
+    font-size: 25px;
+  }
+.container-trip {
+  padding: 20px;
+  width: 500px;
+  margin: auto;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=number],input[type=date]{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+
+
+/* Set a style for the submit/register button */
+.addtriprbtn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.addtriprbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+ 
+
+/* TRIP ON USER SIDE */
+
+.section-user {
+    width: 100%;
+}
+.container-2{
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+    background: #fff;
+}
+.section-tittle-user h1{
+    margin-left: auto;
+    margin-right: auto;
+    color: dodgerblue;
+}
+.card-footer .booking{
+    background: rgb(32, 150, 71);
+}
+.card-footer .delbooking{
+    background: rgba(206, 19, 19, 0.897);
+}
+
+/* TRIP MODAL POPUP */
+*, *::after, *::before{
+    box-sizing:border-box;
+}
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms  ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #fff;
+    min-width:400px;
+    max-width: 80%;
+}
+.modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.modal-header{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1px solid rgb(114, 114, 114 );
+}
+.modal-header .tittle{
+        font-size: 1.4em;
+        font-weight: bold;
+        color: dodgerblue;
+}
+.modal-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+     
+}
+.modal-body{
+    padding: 10px 15px;
+}
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms  ease-in-out;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+
+}
+.modal-body div {
+    margin:20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.modal-body h3,h4{
+    font-size: 20px;
+    text-align: center;
+  }
+.modal-body div button {
+    cursor: pointer;
+    font-size:.9em;
+    font-family: inherit;
+    width: 140px;
+    height: 35px;
+    padding:2px 0;
+    margin-left:15px;
+    border-radius: 5px;
+    border:0 solid transparent;
+    color:white;
+    background:dodgerblue;
+}
+
