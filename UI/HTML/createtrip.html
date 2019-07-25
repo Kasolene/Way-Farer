@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Create Trip - WayFarer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../CSS/responsive.css">
+  
+</head>
+<body>
+    <header>
+        <div class="status-header-login">
+            <a href="./trip.html" class="brand" >WayFarer</a>
+            <a class="navbar" onclick="opensidemenu()">
+                <i class="fa fa-bars fa-2x" ></i>
+            </a>
+                <div class="switch">
+                         <div class="user-avatar fa fa-user" ></div>
+                         <!--<div class="dropdown">
+                            <div id="myDropdown" class="dropdown-content show">
+                                <a href="" id="logout">Logout</a>
+                            
+                        </div>-->
+                </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="sidemenu" id="sidebarleftmenu">
+                <a class="brand" href="./trip.html"  >WayFarer</a>
+                <a class="crossbtn" onclick="closesidemenu()">&times;</a>
+                <a class="active" href="./createtrip.html">Create trip</a>
+                <a class="#" href="./trip.html">Trip</a>
+                <a href="./booking.html">Booking</a>
+                <a href="./signin.html">Logout</a>
+            </ul> 
+        </div>
+        <div id="mainpagecontent" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-tittle"><h1>Trip</h1></div>
+                </div>
+               
+                <div class="section-body" >
+
+                <!-- HIDE TRIP CARDS TO DISPLAY NEW TRIP ADDING FROM -->
+
+                <!-- END OF ADDIGN FORM-->
+                    
+                        <div class="panel"id="panel" >
+                                <div class="panel-heading">
+                                    <div class="panel-heading-tittle"><h3>Create New Trip</h3></div>
+                                        
+                                        
+                                </div> 
+                                <div class="panel-body" >
+                                                    <form class="container-trip" action="">
+                                                          <h3>Add New Trip Form</h3>
+                                                            <label for="">Origin</label>
+                                                            <input type="text" placeholder="Enter Trip Origin">
+
+                                                            <label for="">Destination</label>
+                                                            <input type="text" placeholder="Enter Trip Destination">
+
+                                                            <label for="">Date</label>
+                                                            <input type="date" placeholder="Enter Trip Date">
+
+                                                            <label for="">Bus License Number</label>
+                                                            <input type="text" placeholder="Enter Bus License Number">
+
+                                                            <label for="">Bus Seating capacity</label>
+                                                            <input type="number" placeholder="Enter bus seating capacity">
+
+                                                            <label for="">Fare</label>
+                                                            <input type="number" placeholder="Enter Trip Fare">
+                                                      
+                                                          <button type="submit" class="addtriprbtn">Create</button>
+                                                      
+                                                      </form>                                  
+                                </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+            <div class="contact">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble"  target="_blank" ></i></a> 
+                            <a href="#"><i class="fa fa-twitter"  target="_blank" ></i></a> 
+                            <a href="#"><i class="fa fa-linkedin"  target="_blank" ></i></a> 
+                            <a href="#"><i class="fa fa-facebook"  target="_blank" ></i></a> 
+                                    
+                        </li>
+                    </ul>
+                </div> 
+                <div class="copy_right">
+                        <p>
+                            © 2019 WayFarer. All right reserved. Designed by <span>Nicolas Kasolene</span>
+                        </p>
+                </div>
+    </footer>
+            <script src="../JS/script.js"></script>
+</body>
+</html>
