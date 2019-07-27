@@ -7,23 +7,6 @@ To install this application,
 
 Git clone this repository https://github.com/Kasolene/Way-Farer.git
 Change your directory cd Way-Farer
-Install all dependencies using npm install
-Create .env file which will be used to load environment variables see sample in .env.example file in the project
-Start the app npm run start:dev for development
-Navigate to localhost:8000 in your browser
-Testing
-npm test - run the unit test for backend
-client-test - run the unit test for frontend and display code coverage result
-
-# Built with
-
-NodeJS - A Javscript runtime built runtime that uses an event-driven non-blocking I/O model that makes it lightweight and efficient.
-
-ExpressJS - A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. This is used in this application for routing to endpoints.
-
-Javascript ES6: ES6 is the sixth major release of the javascript language specification. It enables features like constants, arrow functions, template literals, spread opeartor, etc.
-API Documentation
-THE Documentation for the Way-Farer Restful API: Way-Farer API
 
 # Way Farer Features.
 
