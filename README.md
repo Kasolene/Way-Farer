@@ -1,4 +1,4 @@
-# Way-Farer
+[# Way-Farer]
 
 WayFarer is a public bus transportation booking server. Where Clients make reservations by booking seat on trips, they can see all available trips, all their bookings and have the right to delete any of their bookings.
 # Installation
@@ -51,7 +51,7 @@ User Interface :
 
 # Pivotal Tracker stories
 
-(https://www.pivotaltracker.com/n/projects/2377830)
+https://www.pivotaltracker.com/n/projects/2377830
 
 # Author
 
