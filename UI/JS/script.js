@@ -1,3 +1,83 @@
+
+// ADMIN ASIDE MENU 
+const opensidemenu = () =>{
+    document.getElementById('sidebarleftmenu').style.width ='267px';
+    document.getElementById('mainpagecontent').style.marginLeft ='267px';
+}
+const closesidemenu = () =>{
+    document.getElementById('sidebarleftmenu').style.width ='0';
+    document.getElementById('mainpagecontent').style.marginLeft ='0px';
+}
+
+//----------------------
+// MODAL POPUP
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button =>{
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal =>{
+        closeModal(modal)
+    })
+
+})
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal')
+        closeModal(modal)
+    })
+})
+
+function openModal(modal) {
+    if(modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if(modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+/* User Settings Dropdown Menu */
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+
+const myFunction = () => {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.user-avatar')) {
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
 // SIGN UP FORM VALIDATION
 
 // SELECTING ALL TEXT ELEMENTS
@@ -58,62 +138,5 @@ const formValidation = () => {
         return false;
       }
     
-}
-
-
-
-
-
-
-
-
-
-// ADMIN ASIDE MENU 
-const opensidemenu = () =>{
-    document.getElementById('sidebarleftmenu').style.width ='267px';
-    document.getElementById('mainpagecontent').style.marginLeft ='267px';
-}
-const closesidemenu = () =>{
-    document.getElementById('sidebarleftmenu').style.width ='0';
-    document.getElementById('mainpagecontent').style.marginLeft ='0px';
-}
-
-//----------------------
-// MODAL POPUP
-
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
-
-openModalButtons.forEach(button =>{
-    button.addEventListener('click', () => {
-        const modal = document.querySelector(button.dataset.modalTarget)
-        openModal(modal)
-    })
-})
-overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll('.modal.active')
-    modals.forEach(modal =>{
-        closeModal(modal)
-    })
-
-})
-closeModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = button.closest('.modal')
-        closeModal(modal)
-    })
-})
-
-function openModal(modal) {
-    if(modal == null) return
-    modal.classList.add('active')
-    overlay.classList.add('active')
-}
-
-function closeModal(modal) {
-    if(modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
 }
 

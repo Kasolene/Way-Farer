@@ -17,14 +17,14 @@
             <a class="navbar" onclick="opensidemenu()">
                 <i class="fa fa-bars fa-2x" ></i>
             </a>
-                <div class="switch">
-                         <div class="user-avatar fa fa-user" ></div>
-                         <!--<div class="dropdown">
-                            <div id="myDropdown" class="dropdown-content show">
-                                <a href="" id="logout">Logout</a>
-                            </diiv>   
-                        </div>-->
-                </div>
+            <div class="switch"> 
+                <div class="dropdown">
+                   <div class="user-avatar fa fa-user" onclick="myFunction()"></div>
+                   <div id="myDropdown" class="dropdown-content ">
+                       <a href="./signin.html" id="logout">Log Out</a>
+                   </div>
+               </div>
+            </div>   
         </div>
     </header>
     <div class="container">
@@ -44,10 +44,6 @@
                 </div>
                
                 <div class="section-body" >
-
-                <!-- HIDE TRIP CARDS TO DISPLAY NEW TRIP ADDING FROM -->
-
-                <!-- END OF ADDIGN FORM-->
                     
                         <div class="panel"id="panel" >
                                 <div class="panel-heading">
@@ -56,31 +52,31 @@
                                         
                                 </div> 
                                 <div class="panel-body" >
-                                                    <form class="container-trip" action="">
-                                                          <h3>Add New Trip Form</h3>
-                                                            <label for="">Origin</label>
-                                                            <input type="text" placeholder="Enter Trip Origin">
+                                        <form class="container-trip" action="">
+                                            <h3>Add New Trip Form</h3>
 
-                                                            <label for="">Destination</label>
-                                                            <input type="text" placeholder="Enter Trip Destination">
+                                            <label for="">Origin</label>
+                                            <input type="text" placeholder="Enter Trip Origin">
 
-                                                            <label for="">Date</label>
-                                                            <input type="date" placeholder="Enter Trip Date">
+                                            <label for="">Destination</label>
+                                            <input type="text" placeholder="Enter Trip Destination">
 
-                                                            <label for="">Bus License Number</label>
-                                                            <input type="text" placeholder="Enter Bus License Number">
+                                            <label for="">Date</label>
+                                            <input type="date" placeholder="Enter Trip Date">
 
-                                                            <label for="">Bus Seating capacity</label>
-                                                            <input type="number" placeholder="Enter bus seating capacity">
+                                            <label for="">Bus License Number</label>
+                                            <input type="text" placeholder="Enter Bus License Number">
 
-                                                            <label for="">Fare</label>
-                                                            <input type="number" placeholder="Enter Trip Fare">
+                                            <label for="">Bus Seating capacity</label>
+                                            <input type="number" placeholder="Enter bus seating capacity">
+
+                                            <label for="">Fare</label>
+                                            <input type="number" placeholder="Enter Trip Fare">
                                                       
-                                                          <button type="submit" class="addtriprbtn">Create</button>
+                                            <button type="submit" class="addtriprbtn">Create</button>
                                                       
-                                                      </form>                                  
+                                        </form>                                  
                                 </div>
-
                     </div>
                 </div>
             </div>
