@@ -1,4 +1,4 @@
-
+let openedmenu = true;
 // ADMIN ASIDE MENU 
 const opensidemenu = () =>{
     document.getElementById('sidebarleftmenu').style.width ='267px';
@@ -8,6 +8,26 @@ const closesidemenu = () =>{
     document.getElementById('sidebarleftmenu').style.width ='0';
     document.getElementById('mainpagecontent').style.marginLeft ='0px';
 }
+
+
+const menuSwitcher= document.getElementById('menu-switcher');
+const i= document.getElementById('i');
+
+menuSwitcher.addEventListener('click', () => {
+  if(openedmenu == false){
+    openedmenu = true
+    opensidemenu();
+    i.classList.remove('fa-bars');
+    i.classList.add('fa-close');
+  }else{
+    openedmenu = false
+    closesidemenu();
+    i.classList.remove('fa-close');
+    i.classList.add('fa-bars');
+  }
+
+})
+
 
 //----------------------
 // MODAL POPUP
@@ -72,12 +92,6 @@ window.onclick = function(event) {
 }
 
 
-
-
-
-
-
-
 // SIGN UP FORM VALIDATION
 
 // SELECTING ALL TEXT ELEMENTS
@@ -99,6 +113,7 @@ firstName.addEventListener('blur',firstNameVerify, true);
 lastName.addEventListener('blur',lastNameVerify, true);
 email.addEventListener('blur',emailVerify, true);
 password.addEventListener('blur',passwordVerify, true);
+
 
 // Validation function 
 const formValidation = () => {
