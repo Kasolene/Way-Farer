@@ -239,10 +239,9 @@ header .header-login a {
 footer
 {
 	width: 100%;
-	padding: 20px;
+	padding: 10px;
     background-color:#3C4146;
-    border-top: 5px solid #fff;
-    min-height:200px;
+    min-height:100px;
     
 }
 
@@ -252,8 +251,10 @@ footer
     margin: 0;
     font-size: 18px;
     display: flex;
+    font-weight: bold;
     justify-content: center;
     text-align: center;
+
 }
 
 .contact
@@ -261,7 +262,8 @@ footer
     display: flex;
     justify-content: center;
     color: white;
-    margin-bottom: -15px;
+    
+    margin-bottom: -10px;
 
 }
 footer .contact li
@@ -621,6 +623,7 @@ header .status-header-login .switch {
 .container-trip {
   padding: 20px;
   width: 500px;
+  font-size: 18px;
   margin: auto;
   border-radius: 5px 5px 5px 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);

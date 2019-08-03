@@ -13,9 +13,9 @@
 <body>
     <header>
         <div class="status-header-login">
-            <a href="./trip.html" class="brand" >WayFarer</a>
-            <a class="navbar" onclick="opensidemenu()">
-                    <i class="fa fa-bars fa-2x" ></i>
+            <a href="./createtrip.html" class="brand" >WayFarer</a>
+            <a  id="menu-switcher" class="navbar" onclick="opensidemenu()">
+                    <i id='i' class="fa fa-close fa-2x"></i>
             </a>
                 <div class="switch"> 
                          <div class="dropdown">
@@ -29,25 +29,22 @@
     </header>
     <div class="container">
         <div class="sidemenu" id="sidebarleftmenu">
-                <a class="brand" href="./trip.html"  >WayFarer</a>
-                <a class="crossbtn" onclick="closesidemenu()">&times;</a>
+                <a class="brand" href="./createtrip.html"  >WayFarer</a>
                 <a class="" href="./createtrip.html">Create trip</a>
-                <a class="active" href="./trip.html">Trip</a>
-                <a href="./booking.html">Booking</a>
-                <a href="./signin.html">Logout</a>
-            </ul> 
+                <a class="active" href="./trip.html">Trips</a>
+                <a href="./booking.html">Bookings</a>
         </div>
         <div id="mainpagecontent" class="section">
             <div class="section-container">
                 <div class="section-header">
-                    <div class="section-tittle"><h1>Trip</h1></div>
+                    <div class="section-tittle"><h1>Trips</h1></div>
                 </div>
                
                 <div class="section-body" >
  
                         <div class="panel"id="panel" >
                                 <div class="panel-heading">
-                                    <div class="panel-heading-tittle"><h3>Manage Trip</h3></div>
+                                    <div class="panel-heading-tittle"><h3>Manage Trips</h3></div>
                                     <div class="filters">
                                         <div class="comb-container">
                                                 <label>Filter by Destination :</label>
