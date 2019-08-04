@@ -1,29 +1,55 @@
-const  Joi = require('joi');
+import Joi from 'joi';
 
-
-class validateInput {
   /**
-   * This function validates user credentials at the time of signing up.
+   * This function validates in credentials at the time of signing up.
    * @param {*} req -Request to be executed or performed
    * @param {*} res -Response to be returned
    * @param {*} next -Skip process if satifies.
    */
-  static signUp(req, res, next) {
-    const schema = Joi.object().keys({
-      email: Joi.string().email().required(),
-      first_name: Joi.string().min(3).max(25).required(),
-      last_ame: Joi.string().min(3).max(25).required(),
-      password: Joi.string().min(6).max(30).required(),
-      isAdmin: Joi.bool().valid(true, false).required()
+
+  export function validateSignUp(req, res,next) {
+ 
+  const schema = Joi.object().keys({
+    email: Joi.string().email().required()
+      .error(() => 'The valid email is required'),
+    first_name: Joi.string().min(3).required()
+      .error(() => 'The first name is required and and must be of minimum 3 characters '),
+    last_name: Joi.string().min(3).required()
+      .error(() => 'The last name is required and and must be of minimum 3 characters'),
+    password: Joi.string().min(6).required()
+      .error(() => 'The password is required and and must be of minimum 6 characters'),
+      is_admin: Joi.bool().valid(true, false).required()
+      .error(() => 'Please specify if Admin or Not'),
+  });
+
+  const result = Joi.validate(req.body, schema);
+  if (result.error) {
+    return res.status(400).json({
+      status: 400,
+      message: result.error.message,
     });
-
-    const { error } = Joi.validate(req.body, schema);
-
-    if (!error) { return next(); }
-
-    return Helper.joiError(res, error)
+  }
+  if (!req.value) { req.value = {}; }
+  req.value.body = result.value;
+  next();
+  return res.status(200).json(req.value.body);
+ 
   }
 
-}
+  export function validateSignIn(req, res, next) {
+    const schema = Joi.object().keys({
+      email: Joi.string().email().required().error(() => 'The valid email is required'),
+      password: Joi.string().min(6).required().error(() => 'The password is required and and must be of minimum 6 characters'),
+    });
 
-module.exports =validateInput;
+    const result = Joi.validate(req.body, schema);
+    if (result.error) {
+      return res.status(400).json({
+        status: 400,
+        message: (result.error.message),
+      });
+    }
+    next();
+  }
+
+  

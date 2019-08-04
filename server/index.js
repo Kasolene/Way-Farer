@@ -1,14 +1,13 @@
-const http = require('http');
-const  express =  require ('express');
-const morgan = require ('morgan');
-const  bodyParser = require  ('body-parser');
-const config = require('./config/config');
-const user = require('./routes/userRoute');
+import express from 'express';
+import morgan from 'morgan';
+import bodyParser from 'body-parser';
+import config from './config/config';
+import userRoute from './routes/userRoute';
 
 
 const app = express();
 
-const { port, env } = config;
+const { port } = config;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,8 +15,8 @@ app.use(bodyParser.json());
 
 
 // API Routes
-app.use('/api/v1/auth',user);
-//app.use('/api/v1', trip);
+app.use('/api/v1/auth', userRoute);
+
 
 // Home page route
 app.get('/', (req, res) => {
@@ -32,7 +31,7 @@ app.get('/', (req, res) => {
 });
 
 // Render quick credit documentation
-//app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(docs));
+// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(docs));
 
 // handle all error
 app.use((err, req, res, next) => {
@@ -43,14 +42,14 @@ app.use((err, req, res, next) => {
     });
   }
   return next();
-}); 
+});
 // Handle non exist route with with proper message
 app.use((req, res) => {
   res.status(404).json({
     status: 404,
     error: 'Wrong request. Route does not exist',
   });
-}); 
+});
 
 
 app.listen(port, () => {
@@ -58,4 +57,4 @@ app.listen(port, () => {
   console.log(`Server now listening at localhost:${port}`);
 });
 
-module.exports = app;
+export default app;
