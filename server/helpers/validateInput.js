@@ -12,13 +12,13 @@ import Joi from 'joi';
   const schema = Joi.object().keys({
     email: Joi.string().email().required()
       .error(() => 'The valid email is required'),
-    firstName: Joi.string().min(3).required()
+    first_name: Joi.string().min(3).required()
       .error(() => 'The first name is required and and must be of minimum 3 characters '),
-    lastName: Joi.string().min(3).required()
+    last_name: Joi.string().min(3).required()
       .error(() => 'The last name is required and and must be of minimum 3 characters'),
     password: Joi.string().min(6).required()
       .error(() => 'The password is required and and must be of minimum 6 characters'),
-      isAdmin: Joi.bool().valid(true, false).required()
+      is_admin: Joi.bool().valid(true, false).required()
       .error(() => 'Please specify if Admin or Not'),
   });
 
@@ -35,3 +35,5 @@ import Joi from 'joi';
   return res.status(200).json(req.value.body);
  
   }
+
+ 
