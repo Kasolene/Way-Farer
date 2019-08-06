@@ -1,8 +1,11 @@
 import users from '../models/Users';
+import createToken from '../middleware/createToken';
+import { tokenError } from '../helpers/middlewareHelper';
+import {hashPassword, comparePassword} from '../helpers/hashPassword';
 
 export function signUpController(req, res) {
   const {
-    email, password, firstName, lastName, isAdmin,
+    email, first_name, last_name,password, is_admin,
   } = req.body;
   // const index = users.findIndex(user => user.email === email);
   // users[index].is_admin = true;
@@ -13,28 +16,16 @@ export function signUpController(req, res) {
     });
   } else {
     users.push({
-      id: users.length,
+      user_id: users.length,
       email,
-      firstName,
-      lastName,
-      password,
-      isAdmin,
+      first_name,
+      last_name,
+      password:hashPassword(password),
+      is_admin,
+      token:createToken(email),
     });
     res.status(201).json(users[users.length - 1]);
   }
 }
 
-export function signInController(req, res) {
-  const { email, password } = req.body;
-  // const index = users.findIndex(user => user.email === email);
-  // users[index].is_admin = true;
-  const myuser = users.find(user => user.email === email && user.password === password);
-  if (myuser) {
-    res.status(200).send(myuser);
-  } else {
-    res.status(401).json({
-      status: 401,
-      message: 'Incorrect Email Or Password',
-    });
-  }
-}
+
