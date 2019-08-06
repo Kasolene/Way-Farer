@@ -30,8 +30,6 @@ app.get('/', (req, res) => {
   );
 });
 
-// Render quick credit documentation
-// app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(docs));
 
 // handle all error
 app.use((err, req, res, next) => {
