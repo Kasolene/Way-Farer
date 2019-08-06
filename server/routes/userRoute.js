@@ -1,17 +1,13 @@
-const express  = require('express');
+import express from 'express';
+import { signInController, signUpController } from '../controllers/userController';
+import { validateSignUp, validateSignIn } from '../helpers/validateInput';
 
+const router = express.Router();
 
-const router = require('express-promise-router')();
-
-const UserController = require('../controllers/User')
-
-const validateInput = require('../helpers/validateInput')
 // user signup route
-router.route('/signup')
-    .post(validateInput.signUp, UserController.signUp);
+router.post('/signup', validateSignUp, signUpController);
 
 // user signIn route
-router.route('/signin')
-    .post(UserController.signIn);
+router.post('/signin', validateSignIn, signInController);
 
-module.exports = router;
+export default router;
