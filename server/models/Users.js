@@ -1,41 +1,45 @@
-import {hashPassword} from '../helpers/hashPassword';
+import { hashPassword } from '../middlewares/hashPassword';
+
 const users = [
   {
-    user_id: 1,
+    token: 0,
+    userId: 1,
     email: 'nico@gmail.com',
-    first_name: 'nicolas',
-    last_name: 'kasolene',
+    firstName: 'nicolas',
+    lastName: 'kasolene',
     password: hashPassword('nico123'),
-    is_admin: true,
-    token:0,
+    isAdmin: true,
   },
 
   {
-    user_id: 2,
+
+    token: 0,
+    userId: 2,
     email: 'nicolas@gmail.com',
-    first_name: 'nicolas',
-    last_name: 'kasolene',
+    firstName: 'nicolas',
+    lastName: 'kasolene',
     password: hashPassword('nicolas123'),
-    is_admin: false,
-    token:0,
+    isAdmin: false,
   },
   {
-    user_id: 3,
+    token: 0,
+    userId: 3,
     email: 'nickson@gmail.com',
-    first_name: 'nickson',
-    last_name: 'kasolene',
+    firstName: 'nickson',
+    lastName: 'kasolene',
     password: hashPassword('nickson123'),
-    is_admin: false,
-    token:0,
+    isAdmin: false,
   },
   {
-    user_id: 4,
+
+    token: 0,
+    userId: 4,
     email: 'nickas@gmail.com',
-    first_name: 'nick',
-    last_name: 'kasolene',
+    firstName: 'nick',
+    lastName: 'kasolene',
     password: hashPassword('nico123'),
-    is_admin: true,
-    token:0,
+    isAdmin: true,
   },
 ];
+
 export default users;

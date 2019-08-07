@@ -13,7 +13,7 @@ body{
 header{
     background-color: #111;
     width: 100%; 
-    height: 120px;
+    height: 70px;
     position: relative;
     justify-content: center;
     box-shadow: 0 4px 6px hsla(0, 0%, 0%, .2);
@@ -373,7 +373,6 @@ header .status-header-login .switch {
     color: dodgerblue;
     text-align: left;
     font-size: 35px; 
-    height: 110px;
     font-weight: 900;
     text-transform: uppercase;
     padding-right: 8px;

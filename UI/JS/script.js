@@ -1,3 +1,33 @@
+let openedmenu = true;
+// ADMIN ASIDE MENU 
+const opensidemenu = () =>{
+    document.getElementById('sidebarleftmenu').style.width ='267px';
+    document.getElementById('mainpagecontent').style.marginLeft ='267px';
+}
+const closesidemenu = () =>{
+    document.getElementById('sidebarleftmenu').style.width ='0';
+    document.getElementById('mainpagecontent').style.marginLeft ='0px';
+}
+
+
+const menuSwitcher= document.getElementById('menu-switcher');
+const i= document.getElementById('i');
+
+menuSwitcher.addEventListener('click', () => {
+  if(openedmenu == false){
+    openedmenu = true
+    opensidemenu();
+    i.classList.remove('fa-bars');
+    i.classList.add('fa-close');
+  }else{
+    openedmenu = false
+    closesidemenu();
+    i.classList.remove('fa-close');
+    i.classList.add('fa-bars');
+  }
+
+})
+
 
 //----------------------
 // MODAL POPUP
@@ -61,35 +91,6 @@ window.onclick = function(event) {
   }
 }
 
-let openedmenu = true;
-// ADMIN ASIDE MENU 
-const opensidemenu = () =>{
-    document.getElementById('sidebarleftmenu').style.width ='267px';
-    document.getElementById('mainpagecontent').style.marginLeft ='267px';
-}
-const closesidemenu = () =>{
-    document.getElementById('sidebarleftmenu').style.width ='0';
-    document.getElementById('mainpagecontent').style.marginLeft ='0px';
-}
-
-
-const menuSwitcher= document.getElementById('menu-switcher');
-const i= document.getElementById('i');
-
-menuSwitcher.addEventListener('click', () => {
-  if(openedmenu == false){
-    openedmenu = true
-    opensidemenu();
-    i.classList.remove('fa-bars');
-    i.classList.add('fa-close');
-  }else{
-    openedmenu = false
-    closesidemenu();
-    i.classList.remove('fa-close');
-    i.classList.add('fa-bars');
-  }
-
-})
 
 // SIGN UP FORM VALIDATION
 

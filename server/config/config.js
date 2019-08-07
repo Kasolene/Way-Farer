@@ -1,11 +1,11 @@
-const  dotenv = require ('dotenv');
+import dotenv from 'dotenv';
 
 dotenv.config();
 
 const config = {
-  port: process.env.PORT || 7870,
+  port: process.env.PORT || 7777,
   env: process.env.NODE_ENV,
   
 };
 
-module.exports = config;
+export default config;
