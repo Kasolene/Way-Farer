@@ -29,3 +29,20 @@ export function getAllTrips(req, res) {
     data: trips,
   });
 }
+
+export function getOneTrip(req, res) {
+  const {tripId } = req.params;
+  const trip = trips.find(trip => trip.tripId.toString() === tripId );
+  if (trip) {
+    res.status(200).send({
+      status : 200,
+      data : trip,
+    });
+  } if (!trip) {
+    res.status(404).send({
+      message: 'No trip found with this ID',
+  });
+  }else {
+
+  }
+}
