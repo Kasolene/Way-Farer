@@ -23,4 +23,9 @@ export function createAtrip(req, res) {
   res.status(201).json(trips[trips.length - 1]);
 }
 
-export default createAtrip;
+export function getAllTrips(req, res) {
+  res.status(200).json({
+    status: 200,
+    data: trips,
+  });
+}
