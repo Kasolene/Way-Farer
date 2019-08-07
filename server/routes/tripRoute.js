@@ -1,5 +1,5 @@
 import express from 'express';
-import { createAtrip, getAllTrips, getOneTrip } from '../controllers/tripController';
+import { createAtrip, getAllTrips, getOneTrip, cancelTrip} from '../controllers/tripController';
 import { validateTrip } from '../middlewares/validateInput';
 import isAdmin from '../helpers/authenticateAdmin';
 
@@ -14,4 +14,6 @@ router.get('/trip', getAllTrips);
 // Retrieve a single Trip by tripId
 router.get('/trip/:tripId', getOneTrip);
 
+// Cancel a Trip by tripId
+ router.post('/trip/:tripId',isAdmin, cancelTrip);
 export default router;

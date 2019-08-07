@@ -46,3 +46,23 @@ export function getOneTrip(req, res) {
 
   }
 }
+
+export function cancelTrip(req, res) {
+
+  const { tripId } = req.params;
+  const mytrip = trips.find(trip=>trip.tripId.toString() === tripId);
+  if(mytrip){
+    trips[mytrip.tripId-1].status = 'canceled';
+    res.status(200).json({
+      message:'trip canceled',
+      data:trips[mytrip.tripId-1],
+    });
+  } else {
+    res.status(404).json({
+      message:'trip could not be found',
+      status:404,
+    });
+  }
+
+}
+

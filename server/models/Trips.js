@@ -7,6 +7,7 @@ const trips = [
     destination: 'Kampala',
     tripDate: Date(),
     fare: 10,
+    status : 'active'
   },
 
   {
