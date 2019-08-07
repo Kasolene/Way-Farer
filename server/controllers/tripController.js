@@ -66,3 +66,21 @@ export function cancelTrip(req, res) {
 
 }
 
+export function filterTripByOriginOrDest(req, res) {
+  console.log('step 1');
+  const { origin } = req.params;
+  const filter = trips.find(trip => trip.origin === origin);
+  console.log('step 2');
+  if(filter){
+    res.status(200).json({
+      status:200,
+      data:filter,
+    });
+  } else {
+    res.status(404).json({
+      status:404,
+      message:'trip not found',
+    });
+  }
+}
+
