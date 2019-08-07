@@ -28,7 +28,6 @@ export function signUpController(req, res) {
 
 export function signInController(req, res) {
   const { email, password } = req.body;
-
   const myuser = users.find(user => user.email === email && comparePassword(password, user.password));
 
   if (myuser) {

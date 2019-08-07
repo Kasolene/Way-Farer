@@ -38,7 +38,7 @@ const users = [
     firstName: 'nick',
     lastName: 'kasolene',
     password: hashPassword('nico123'),
-    isAdmin: true,
+    isAdmin: false,
   },
 ];
 

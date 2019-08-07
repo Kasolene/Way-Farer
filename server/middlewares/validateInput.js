@@ -48,3 +48,34 @@ export function validateSignIn(req, res, next) {
   }
   next();
 }
+
+export function validateTrip(req, res, next) {
+  const schema = Joi.object().keys({
+    busLicenseNumber: Joi.string().trim().strict().regex(/^[A-Za-z]{3}-[0-9]{3}-[A-Za-z]{2}$/)
+      .required()
+      .error(() => 'The bus lincese number is required and with this format XXX-XXX-XX '),
+    seatingCapacity: Joi.number().required()
+      .error(() => 'The seating capacity is equired and can not be less than 1'),
+    origin: Joi.string().trim()
+      .required()
+      .error(() => 'The origin is required and should not be less than 3 characters'),
+    destination: Joi.string().trim()
+      .required()
+      .error(() => 'The destination is required and should not be less than 3 characters '),
+    tripDate: Joi.date().required()
+      .error(() => 'The trip date is required "'),
+    fare: Joi.number().required()
+      .error(() => 'The fare is equired and can not be less than 1'),
+  });
+
+  const result = Joi.validate(req.body, schema);
+  if (result.error) {
+    return res.status(400).json({
+      status: 400,
+      message: (result.error.message),
+    });
+  }
+  if (!req.value) { req.value = {}; }
+  req.value.body = result.value;
+  next();
+}
