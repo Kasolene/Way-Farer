@@ -499,11 +499,12 @@
 
    
   header .header-login {
-  
-    width: 70%;
+    width: 100%;
     padding-top: 45px;
+   
       
   }
+ 
   .header-login button {
    
     width: 75px;
@@ -613,7 +614,8 @@
     .container-trip {
      
       width: 100%;
-      
+      font-size: 12px;
+  
     }
 
     .card-footer button{

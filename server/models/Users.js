@@ -1,53 +1,45 @@
-import {hashPassword} from '../helpers/hashPassword';
+import { hashPassword } from '../middlewares/hashPassword';
+
 const users = [
   {
-    status: 200,
-    data : {
-      token:0,
-      user_id: 1,
-      email: 'nico@gmail.com',
-      first_name: 'nicolas',
-      last_name: 'kasolene',
-      password: hashPassword('nico123'),
-      is_admin: true,
-  }
+    token: 0,
+    userId: 1,
+    email: 'nico@gmail.com',
+    firstName: 'nicolas',
+    lastName: 'kasolene',
+    password: hashPassword('nico123'),
+    isAdmin: true,
   },
 
   {
-    status : 200,
-    data : {
-      token:0,
-      user_id: 2,
-      email: 'nicolas@gmail.com',
-      first_name: 'nicolas',
-      last_name: 'kasolene',
-      password: hashPassword('nicolas123'),
-      is_admin: false,
-    }
+
+    token: 0,
+    userId: 2,
+    email: 'nicolas@gmail.com',
+    firstName: 'nicolas',
+    lastName: 'kasolene',
+    password: hashPassword('nicolas123'),
+    isAdmin: false,
   },
   {
-    status : 200,
-    data : {
-      token:0,
-      user_id: 3,
-      email: 'nickson@gmail.com',
-      first_name: 'nickson',
-      last_name: 'kasolene',
-      password: hashPassword('nickson123'),
-      is_admin: false,
-    }
+    token: 0,
+    userId: 3,
+    email: 'nickson@gmail.com',
+    firstName: 'nickson',
+    lastName: 'kasolene',
+    password: hashPassword('nickson123'),
+    isAdmin: false,
   },
   {
-    status : 200,
-    data : {
-      token:0,
-      user_id: 4,
-      email: 'nickas@gmail.com',
-      first_name: 'nick',
-      last_name: 'kasolene',
-      password: hashPassword('nico123'),
-      is_admin: true,
-    }
+
+    token: 0,
+    userId: 4,
+    email: 'nickas@gmail.com',
+    firstName: 'nick',
+    lastName: 'kasolene',
+    password: hashPassword('nico123'),
+    isAdmin: true,
   },
 ];
+
 export default users;

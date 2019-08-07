@@ -1,14 +1,12 @@
 import users from '../models/Users';
-import createToken from '../middleware/createToken';
-import { tokenError } from '../helpers/middlewareHelper';
-import {hashPassword, comparePassword} from '../helpers/hashPassword';
+import createToken from '../helpers/createToken';
+import { hashPassword } from '../middlewares/hashPassword';
 
 export function signUpController(req, res) {
   const {
-    email, first_name, last_name,password, is_admin,
+    email, firstName, lastName, password, isAdmin,
   } = req.body;
-  // const index = users.findIndex(user => user.email === email);
-  // users[index].is_admin = true;
+
   if (users.find(user => user.email === email)) {
     res.status(409).send({
       status: 409,
@@ -16,16 +14,16 @@ export function signUpController(req, res) {
     });
   } else {
     users.push({
-      user_id: users.length,
+      token: createToken(email),
+      userId: users.length,
       email,
-      first_name,
-      last_name,
-      password:hashPassword(password),
-      is_admin,
-      token:createToken(email),
+      firstName,
+      lastName,
+      password: hashPassword(password),
+      isAdmin,
     });
     res.status(201).json(users[users.length - 1]);
   }
 }
 
-
+export default signUpController;

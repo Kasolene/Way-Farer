@@ -1,14 +1,14 @@
 import jwt from '../../node_modules/jsonwebtoken';
 import {
   validateToken, TokenUnauthorized, tokenError,
-} from '../helpers/middlewareHelper';
+} from '../middlewares/middlewareHelper';
 import users from '../models/Users';
 
 export default function checkAdmin(req, res, next) {
   let token = req.headers['x-access-token'] || req.headers.authorization;
   token = validateToken(token);
   if (token) {
-    jwt.verify(token, 'nikson', (err, decoded) => {
+    jwt.verify(token, 'nicolas', (err, decoded) => {
       if (err) {
         return tokenError(res);
       }
