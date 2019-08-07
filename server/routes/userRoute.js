@@ -1,6 +1,6 @@
 import express from 'express';
 import { signInController, signUpController } from '../controllers/userController';
-import { validateSignUp, validateSignIn } from '../helpers/validateInput';
+import { validateSignUp, validateSignIn } from '../middlewares/validateInput';
 
 const router = express.Router();
 

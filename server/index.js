@@ -23,9 +23,7 @@ app.get('/', (req, res) => {
   res.status(200).json(
     {
       status: 200,
-      data: [{
-        message: 'Welcome to default WayFare API Home Route',
-      }],
+      message: 'Welcome to default WayFare API Home Route',
     },
   );
 });
@@ -36,10 +34,9 @@ app.use((err, req, res, next) => {
   if (err) {
     return res.status(500).json({
       status: 500,
-      error: 'Internal server error',
+      err: 'Internal server error',
     });
-  }
-  return next();
+  }   next();
 });
 // Handle non exist route with with proper message
 app.use((req, res) => {
