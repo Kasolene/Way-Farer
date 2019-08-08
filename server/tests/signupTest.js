@@ -1,8 +1,8 @@
-/*import assert from 'assert';
+import assert from 'assert';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { expect } from 'chai';
-import  { app} from '../index';
+import  app from '../index';
 import users from '../models/Users';
 
 const should = chai.should();
@@ -32,7 +32,7 @@ const signupDetailsInvalidPassword = {
 };
 
 const signupDetailsTrue = {
-  email: 'nicolas@gmail.com',
+  email: 'nicolaskasolene@gmail.com',
   firstName: 'nicolas',
   lastName: 'kasolene',
   password:'nicolas123',
@@ -42,7 +42,7 @@ describe('signup', () => {
   it('it should not create an account with undefinned values', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signup')
-      .send()
+      .send(signupDetailsUndefinned)
       .end((err, res) => {
         res.should.have.status(400);
         done();
@@ -55,7 +55,6 @@ describe('signup', () => {
       .send(signupDetails)
       .end((err, res) => {
         res.should.have.status(409);
-
         done();
       });
   });
@@ -65,8 +64,8 @@ describe('signup', () => {
       .post('/api/v1/auth/signup')
       .send(signupDetailsTrue)
       .end((err, res) => {
-        res.should.have.status(201);
-        chai.expect(res.body.data.email).equal('nicolas@gmail.com');
+        res.should.have.status(200);
+        chai.expect(res.body.data.email).equal('nicolaskasolene@gmail.com');
         done();
       });
   });
@@ -98,8 +97,7 @@ describe('signup', () => {
       .send(signupDetailsUndefinned)
       .end((err, res) => {
         res.should.have.status(400);
-        closeServer();
         done();
       });
   });
-}); */
+}); 
