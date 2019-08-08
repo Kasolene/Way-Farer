@@ -37,7 +37,26 @@ export function bookAtrip(req, res) {
       }
 }
 
-
-
-
-
+export function getAllBookings(req, res, next) {
+  const {userEmail} = req.query;
+  const user  = users.find(user=>user.email === userEmail);
+  if(user && user.isAdmin){
+    res.status(200).json({
+      status: 200,
+      data: bookings,
+    });
+  } else if(user){
+    const myBookings = [];
+    bookings.forEach(element => {
+        if(element.userEmail === userEmail) myBookings.push(element);
+    });
+    res.status(200).json({
+      status: 200,
+      data: myBookings,
+    });
+  } else {
+    res.status(404),send({
+      message: 'user not found',
+    })
+  }
+}

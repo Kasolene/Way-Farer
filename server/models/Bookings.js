@@ -12,7 +12,7 @@ const bookings = [
     userFistName : users[1].firstName,
     userLastName : users[1].lastName,
     userEmail: users[1].email,
-    createdOn :Date.now(),
+    createdOn : Date.now(),
   },
   {
     bookingId: 2,
@@ -23,7 +23,7 @@ const bookings = [
     userFistName : users[2].firstName,
     userLastName : users[2].lastName,
     userEmail: users[2].email,
-    createdOn :Date.now(),
+    createdOn : Date.now(),
   },
 
 ];
