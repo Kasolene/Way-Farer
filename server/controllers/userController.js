@@ -35,10 +35,17 @@ export function signInController(req, res) {
     const token = createToken(email);
     users[index].token = token;
     myuser.token = token;
-    delete myuser.password;
     res.status(200).send({
       status: 200,
-      data: myuser,
+      data: {
+        
+          token: myuser.token,
+          userId: myuser.userId,
+          email: myuser.email,
+          firstName: myuser.firstName,
+          lastName: myuser.lastName,
+          isAdmin: false,
+      },
     });
   } else {
     res.status(401).json({

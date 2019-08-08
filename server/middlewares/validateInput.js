@@ -9,16 +9,14 @@ import Joi from 'joi';
 
 export function validateSignUp(req, res, next) {
   const schema = Joi.object().keys({
-    email: Joi.string().email().required()
+    email: Joi.string().email().required().trim()
       .error(() => 'The valid email is required'),
-    firstName: Joi.string().min(3).required()
+    firstName: Joi.string().min(3).required().trim()
       .error(() => 'The first name is required and and must be of minimum 3 characters '),
-    lastName: Joi.string().min(3).required()
+    lastName: Joi.string().min(3).required().trim()
       .error(() => 'The last name is required and and must be of minimum 3 characters'),
-    password: Joi.string().min(6).required()
+    password: Joi.string().min(6).required().trim()
       .error(() => 'The password is required and and must be of minimum 6 characters'),
-    isAdmin: Joi.bool().valid(true, false).required()
-      .error(() => 'Please specify if Admin or Not'),
   });
 
   const result = Joi.validate(req.body, schema);
@@ -36,7 +34,7 @@ export function validateSignUp(req, res, next) {
 export function validateSignIn(req, res, next) {
   const schema = Joi.object().keys({
     email: Joi.string().email().required().error(() => 'The valid email is required'),
-    password: Joi.string().min(6).required().error(() => 'The password is required and and must be of minimum 6 characters'),
+
   });
 
   const result = Joi.validate(req.body, schema);
