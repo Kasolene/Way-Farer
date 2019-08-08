@@ -34,7 +34,8 @@ export function validateSignUp(req, res, next) {
 export function validateSignIn(req, res, next) {
   const schema = Joi.object().keys({
     email: Joi.string().email().required().error(() => 'The valid email is required'),
-
+    password: Joi.string().required().trim()
+      .error(() => 'The password is required '),
   });
 
   const result = Joi.validate(req.body, schema);

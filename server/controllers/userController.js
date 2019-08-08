@@ -10,7 +10,9 @@ export function signUpController(req, res) {
   if (users.find(user => user.email === email)) {
     res.status(409).send({
       status: 409,
-      message: 'This email is already in use',
+      data : {
+        message: 'This email is already in use',
+      }
     });
   } else {
     users.push({
@@ -20,9 +22,12 @@ export function signUpController(req, res) {
       firstName,
       lastName,
       password: hashPassword(password),
-      isAdmin,
+      isAdmin :false,
     });
-    res.status(201).json(users[users.length - 1]);
+    res.status(200).json({
+      status: 200,
+      data:users[users.length - 1]
+    });
   }
 }
 
@@ -38,19 +43,19 @@ export function signInController(req, res) {
     res.status(200).send({
       status: 200,
       data: {
-        
           token: myuser.token,
           userId: myuser.userId,
           email: myuser.email,
           firstName: myuser.firstName,
           lastName: myuser.lastName,
-          isAdmin: false,
       },
     });
   } else {
     res.status(401).json({
-      status: 401,
+      status : 401,
+      data : {
       message: 'Incorrect Email Or Password',
+      }
     });
   }
 }

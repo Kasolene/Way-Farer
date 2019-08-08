@@ -25,14 +25,18 @@ export function bookAtrip(req, res) {
         res.status(201).json(bookings[bookings.length - 1]);
       } else {
         res.status(404).send({
-          message : 'specified user not found',
           status: 404,
+          data :{
+            message : 'specified user not found',
+          }
         });
       }
       } else {
         res.status(404).send({
-          message : 'specified trip not found',
           status: 404,
+          data : {
+            message : 'specified trip not found',
+          }
         });
       }
 }
@@ -56,7 +60,31 @@ export function getAllBookings(req, res, next) {
     });
   } else {
     res.status(404),send({
-      message: 'user not found',
+      status :404,
+      data : {
+        message: 'user not found',
+      }
     })
   }
 }
+
+export function deleteBooking(req, res, next) {
+  const { bookingId } = req.params;
+  const booking  =  bookings.find(book => book.bookingId.toString() === bookingId);
+  if(booking ){
+    bookings.splice(booking.bookingId - 1,1);
+    res.status(200).send({
+      status: 200,
+      date : {
+        message : 'booking deleted successfully'
+      }
+    });
+  }  else {
+   res.status(404).send({
+    status: 200,
+    date : {
+      message : 'booking not found'
+    }
+   });
+  }
+ }
