@@ -15,5 +15,5 @@ router.get('/trip', getAllTrips);
 router.get('/trip/:tripId', getOneTrip);
 
 // Cancel a Trip by tripId
- router.post('/trip/:tripId',isAdmin, cancelTrip);
+ router.post('/trip/:tripId', cancelTrip);
 export default router;
