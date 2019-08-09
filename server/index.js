@@ -3,8 +3,12 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import config from './config/config';
 import userRoute from './routes/userRoute';
+ ft-signin-ap-167693020
+
+
 import tripRoute from './routes/tripRoute';
 import bookingRoute from './routes/bookingRoute';
+develop
 
 const app = express();
 
@@ -17,8 +21,11 @@ app.use(bodyParser.json());
 
 // API Routes
 app.use('/api/v1/auth', userRoute);
+ft-signin-ap-167693020
+
 app.use('/api/v1', tripRoute);
 app.use('/api/v1', bookingRoute);
+> develop
 
 
 // Home page route
@@ -39,7 +46,11 @@ app.use((err, req, res, next) => {
       status: 500,
       err: 'Internal server error',
     });
+ft-signin-ap-167693020
+  }   next();
+
   } next();
+ develop
 });
 // Handle non exist route with with proper message
 app.use((req, res) => {

@@ -2,11 +2,17 @@
     "root": true,
     "extends": "airbnb-base",
     "env": {
+ft-signin-ap-167693020
+
         "node": true,
+ develop
         "es6": true,
         "mocha": true
     },
     "rules": {
+ft-signin-ap-167693020
+        "linebreak-style": 0,
+        "ignoreDestructuring": true 
         "one-var": 0,
         "one-var-declaration-per-line": 0,
         "new-cap": 0,
@@ -16,5 +22,6 @@
         "comma-dangle": 0,
         "curly": ["error", "multi-line"],
         "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
+develop
     }
 }
