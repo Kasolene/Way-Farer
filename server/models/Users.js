@@ -1,8 +1,9 @@
 import { hashPassword } from '../middlewares/hashPassword';
+import createToken from '../helpers/createToken';
 
 const users = [
   {
-    token: 0,
+    token: createToken('nico@gmail.com'),
     userId: 1,
     email: 'nico@gmail.com',
     firstName: 'nicolas',
@@ -12,7 +13,6 @@ const users = [
   },
 
   {
-
     token: 0,
     userId: 2,
     email: 'nicolas@gmail.com',

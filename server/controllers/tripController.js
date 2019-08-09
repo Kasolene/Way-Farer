@@ -18,9 +18,13 @@ export function createAtrip(req, res) {
     destination,
     tripDate: Date(),
     fare,
-    status,
+    status :'active',
   });
-  res.status(201).json(trips[trips.length - 1]);
+  res.status(200).json({
+    status : 200,
+    data : trips[trips.length - 1]
+  }
+  );
 }
 
 export function getAllTrips(req, res) {
@@ -40,10 +44,11 @@ export function getOneTrip(req, res) {
     });
   } if (!trip) {
     res.status(404).send({
-      message: 'No trip found with this ID',
+     status :404,
+     data : {
+        message: 'No trip found with this ID',
+     }
   });
-  }else {
-
   }
 }
 
@@ -54,10 +59,15 @@ export function cancelTrip(req, res) {
   if(mytrip){
     trips[mytrip.tripId-1].status = 'canceled';
     res.status(200).json({
+      ft-cancel-trip-api-167765923
       status: 200,
       data: {
         message : 'Trip cancelled successfully'
       }
+                 ft-filter-trips-api-167768837
+      message:'trip canceled',
+      data:trips[mytrip.tripId-1],
+ develop
     });
   } else {
    res.status(500).json({
@@ -68,3 +78,35 @@ export function cancelTrip(req, res) {
 
 }
 
+export function filterTripByOriginOrDest(req, res) {
+  console.log('step 1');
+  const { origin } = req.params;
+  const filter = trips.find(trip => trip.origin === origin);
+  console.log('step 2');
+  if(filter){
+    res.status(200).json({
+      status:200,
+      data:filter,
+    });
+  } else {
+    res.status(404).json({
+      status:404,
+      message:'trip not found',
+    });
+  }
+}
+
+      status: 200,
+      data: {
+        message : 'Trip cancelled successfully'
+      }
+    });
+  } else {
+   res.status(500).json({
+      status: 500,
+      message: 'trip not cancelled',
+    });
+  }
+
+}
+develop
