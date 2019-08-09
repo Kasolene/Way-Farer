@@ -1,3 +1,7 @@
 language: node_js
+
 node_js:
-  - "lts/*"
+- node
+- 'lts/*'
+after_success: npm run coverage
+
