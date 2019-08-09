@@ -59,6 +59,37 @@ export function cancelTrip(req, res) {
   if(mytrip){
     trips[mytrip.tripId-1].status = 'canceled';
     res.status(200).json({
+      ft-filter-trips-api-167768837
+      message:'trip canceled',
+      data:trips[mytrip.tripId-1],
+    });
+  } else {
+    res.status(404).json({
+      message:'trip could not be found',
+      status:404,
+    });
+  }
+
+}
+
+export function filterTripByOriginOrDest(req, res) {
+  console.log('step 1');
+  const { origin } = req.params;
+  const filter = trips.find(trip => trip.origin === origin);
+  console.log('step 2');
+  if(filter){
+    res.status(200).json({
+      status:200,
+      data:filter,
+    });
+  } else {
+    res.status(404).json({
+      status:404,
+      message:'trip not found',
+    });
+  }
+}
+
       status: 200,
       data: {
         message : 'Trip cancelled successfully'
@@ -72,3 +103,4 @@ export function cancelTrip(req, res) {
   }
 
 }
+develop
