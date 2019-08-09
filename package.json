@@ -7,10 +7,10 @@
     "clean": "rm -rf bluid && mkdir build",
     "build-babel":"babel -d ./build ./server -s",
     "build": "npm run clean && npm run build-babel",
-    "test": "cross-env NODE-ENV=test nyc --reporter=html --reporter=text mocha --exit server/tests/*js",
-    "coverage": "nyc report --reporter=html --reporter=text",
-    "start": " node ./build/index.js",
-    "lint": "eslint"
+    "start": "nodemon index.js --exec babel-node --",
+    "test": "nyc mocha --require babel-register ./server/tests/*.js  --timeout 150000 --exit",
+    "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
+    "lint": "node_modules/.bin/eslint ./ --fix"
   },
   "nyc": {
     "require": [
