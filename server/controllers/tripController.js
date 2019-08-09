@@ -59,14 +59,20 @@ export function cancelTrip(req, res) {
   if(mytrip){
     trips[mytrip.tripId-1].status = 'canceled';
     res.status(200).json({
-      ft-filter-trips-api-167768837
+      ft-cancel-trip-api-167765923
+      status: 200,
+      data: {
+        message : 'Trip cancelled successfully'
+      }
+                 ft-filter-trips-api-167768837
       message:'trip canceled',
       data:trips[mytrip.tripId-1],
+ develop
     });
   } else {
-    res.status(404).json({
-      message:'trip could not be found',
-      status:404,
+   res.status(500).json({
+      status: 500,
+      err: 'trip not cancelled',
     });
   }
 

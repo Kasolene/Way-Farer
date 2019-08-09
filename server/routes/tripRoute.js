@@ -18,6 +18,8 @@ router.get('/trip', getAllTrips);
 router.get('/trip/:tripId', getOneTrip);
 
 // Cancel a Trip by tripId
+ft-cancel-trip-api-167765923
+ router.post('/trip/:tripId', cancelTrip);
 ft-filter-trips-api-167768837
  router.post('/trip/:tripId',isAdmin, cancelTrip);
 
@@ -27,4 +29,5 @@ router.get('/trip/:origin',filterTripByOriginOrDest);
 router.post('/trip/:tripId', cancelTrip);
 develop
 
+develop
 export default router;
