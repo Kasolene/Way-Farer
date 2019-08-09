@@ -9,7 +9,7 @@
     "build": "npm run clean && npm run build-babel",
     "test": "cross-env NODE-ENV=test nyc --reporter=html --reporter=text mocha --exit server/tests/*js",
     "coverage": "nyc report --reporter=html --reporter=text",
-    "start": "npm run build && node ./build/index.js",
+    "start": " node ./build/index.js",
     "lint": "eslint"
   },
   "nyc": {
