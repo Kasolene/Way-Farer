@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Kasolene/Way-Farer.svg?branch=develop)](https://travis-ci.org/Kasolene/Way-Farer)
+[![Coverage Status](https://coveralls.io/repos/github/Kasolene/Way-Farer/badge.svg?branch=develop)](https://coveralls.io/github/Kasolene/Way-Farer?branch=develop)
 
-# [Way-Farer](https://kasolene.github.io/Way-Farer/UI/)
 # [Way-Farer](https://kasolene.github.io/Way-Farer/UI/)
 
 WayFarer is a public bus transportation booking server. Where Clients make reservations by booking seat on trips, they can see all available trips, all their bookings and have the right to delete any of their bookings.
