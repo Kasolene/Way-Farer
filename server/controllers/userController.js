@@ -1,10 +1,14 @@
 import users from '../models/Users';
 import createToken from '../helpers/createToken';
+ ft-signup-api-167688267
+import { hashPassword } from '../middlewares/hashPassword';
+
 ft-signin-ap-167693020
 // import { tokenError } from '../middlewares/middlewareHelper';
 
 develop
 import { hashPassword, comparePassword } from '../middlewares/hashPassword';
+ develop
 
 export function signUpController(req, res) {
   const {
@@ -44,6 +48,9 @@ develop
  develop
   }
 }
+
+ ft-signup-api-167688267
+export default signUpController;
 
 export function signInController(req, res) {
   const { email, password } = req.body;
@@ -89,3 +96,4 @@ develop
     });
   }
 }
+ develop

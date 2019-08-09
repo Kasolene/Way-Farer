@@ -44,6 +44,9 @@ develop
   next();
 }
 
+ ft-signup-api-167688267
+export default validateSignUp;
+
 export function validateSignIn(req, res, next) {
   const schema = Joi.object().keys({
     email: Joi.string().email().required().error(() => 'The valid email is required'),
@@ -97,4 +100,5 @@ export function validateTrip(req, res, next) {
   req.value.body = result.value;
   next();
 }
+ develop
  develop

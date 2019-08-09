@@ -10,6 +10,9 @@ ft-signin-ap-167693020
         "mocha": true
     },
     "rules": {
+ft-signup-api-167688267
+        "linebreak-style": 0
+
 ft-signin-ap-167693020
         "linebreak-style": 0,
         "ignoreDestructuring": true 
@@ -23,5 +26,6 @@ ft-signin-ap-167693020
         "curly": ["error", "multi-line"],
         "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
 develop
+ develop
     }
 }
