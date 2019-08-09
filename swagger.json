@@ -1,0 +1,339 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "WayFarer is a public bus transportation booking server",
+    "version" : "1.0",
+    "title" : "WAY-FARER",
+    "contact" : { }
+  },
+  "host" : "wayfarer1v.herokuapp.com",
+  "basePath" : "/api/v1",
+  "tags" : [ {
+    "name" : "Misc",
+    "description" : ""
+  } ],
+  "schemes" : [ "http" ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/auth/signup" : {
+      "post" : {
+        "tags" : [ "Auth" ],
+        "summary" : "signup",
+        "description" : "Allows user to sign up",
+        "operationId" : "AuthSignupPost",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "firstName",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "lastName",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "password",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ],
+        "deprecated" : false
+      }
+    },
+    "/auth/signin" : {
+      "post" : {
+        "tags" : [ "Auth" ],
+        "summary" : "signin",
+        "description" : "Allows user to login",
+        "operationId" : "AuthSigninPost",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authenticateAdmin",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "password",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ],
+        "deprecated" : false
+      }
+    },
+    "/trip" : {
+      "get" : {
+        "tags" : [ "trip" ],
+        "summary" : "all trips",
+        "description" : "TODO: Allow users to view available trips",
+        "operationId" : "TripGet",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ],
+        "deprecated" : false
+      },
+      "post" : {
+        "tags" : [ "trip" ],
+        "summary" : "create a trip",
+        "description" : "Allow Admin to create a trip",
+        "operationId" : "TripPost",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "busLicenseNumber",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "seatingCapacity",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "origin",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "destination",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "tripDate",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "fare",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ],
+        "deprecated" : false
+      }
+    },
+    "/trip/2" : {
+      "get" : {
+        "tags" : [ "trip" ],
+        "summary" : "one trip",
+        "description" : "Allow user to get a specifi trip",
+        "operationId" : "Trip2Get",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ],
+        "deprecated" : false
+      }
+    },
+    "/trip/1" : {
+      "post" : {
+        "tags" : [ "trip" ],
+        "summary" : "cancel a trip",
+        "description" : "Allow Admin to cancel a trip",
+        "operationId" : "Trip1Post",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "security" : [ ],
+        "deprecated" : false
+      }
+    },
+    "/bookings" : {
+      "get" : {
+        "tags" : [ "booking" ],
+        "summary" : "get booking",
+        "description" : "allow admin to get all bookings, while user get his bookings",
+        "operationId" : "BookingsGet",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userEmail",
+          "in" : "query",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "deprecated" : false
+      },
+      "post" : {
+        "tags" : [ "booking" ],
+        "summary" : "create booking",
+        "description" : "Allow user to book a seat in the trip",
+        "operationId" : "BookingsPost",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "tripId",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "userEmail",
+          "in" : "formData",
+          "description" : "",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "deprecated" : false
+      }
+    },
+    "/bookings/2" : {
+      "delete" : {
+        "tags" : [ "booking" ],
+        "summary" : "delete booking",
+        "description" : "allow user to delete a specific trip",
+        "operationId" : "Bookings2Delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "headers" : { }
+          }
+        },
+        "deprecated" : false
+      }
+    }
+  },
+  "definitions" : { }
+}
