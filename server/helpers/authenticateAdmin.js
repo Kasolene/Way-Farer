@@ -14,7 +14,7 @@ export default function checkAdmin(req, res, next) {
       }
       req.decoded = decoded;
       if (users.find(user => user.token === token && user.isAdmin)) next();
-      return TokenUnauthorized(res);
+      else return TokenUnauthorized(res);
     });
   } else {
     return tokenError(res);

@@ -18,9 +18,13 @@ export function createAtrip(req, res) {
     destination,
     tripDate: Date(),
     fare,
-    status,
+    status :'active',
   });
-  res.status(201).json(trips[trips.length - 1]);
+  res.status(200).json({
+    status : 200,
+    data : trips[trips.length - 1]
+  }
+  );
 }
 
 export function getAllTrips(req, res) {
@@ -40,9 +44,31 @@ export function getOneTrip(req, res) {
     });
   } if (!trip) {
     res.status(404).send({
-      message: 'No trip found with this ID',
+     status :404,
+     data : {
+        message: 'No trip found with this ID',
+     }
   });
-  }else {
-
   }
+}
+
+export function cancelTrip(req, res) {
+
+  const { tripId } = req.params;
+  const mytrip = trips.find(trip=>trip.tripId.toString() === tripId);
+  if(mytrip){
+    trips[mytrip.tripId-1].status = 'canceled';
+    res.status(200).json({
+      status: 200,
+      data: {
+        message : 'Trip cancelled successfully'
+      }
+    });
+  } else {
+   res.status(500).json({
+      status: 500,
+      message: 'trip not cancelled',
+    });
+  }
+
 }
