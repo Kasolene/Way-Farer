@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Kasolene/Way-Farer.svg?branch=ch-tests-api-167784656)](https://travis-ci.org/Kasolene/Way-Farer)
+[![Build Status](https://travis-ci.org/Kasolene/Way-Farer.svg?branch=develop)](https://travis-ci.org/Kasolene/Way-Farer)
 
 # [Way-Farer](https://kasolene.github.io/Way-Farer/UI/)
 # [Way-Farer](https://kasolene.github.io/Way-Farer/UI/)
