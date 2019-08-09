@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import config from './config/config';
 import userRoute from './routes/userRoute';
 import tripRoute from './routes/tripRoute';
+import bookingRoute from './routes/bookingRoute';
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 // API Routes
 app.use('/api/v1/auth', userRoute);
 app.use('/api/v1', tripRoute);
+app.use('/api/v1', bookingRoute);
 
 
 // Home page route
