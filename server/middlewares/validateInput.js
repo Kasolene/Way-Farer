@@ -9,18 +9,6 @@ import Joi from 'joi';
 
 export function validateSignUp(req, res, next) {
   const schema = Joi.object().keys({
- ft-signin-ap-167693020
-    email: Joi.string().email().required()
-      .error(() => 'The valid email is required'),
-    firstName: Joi.string().min(3).required()
-      .error(() => 'The first name is required and and must be of minimum 3 characters '),
-    lastName: Joi.string().min(3).required()
-      .error(() => 'The last name is required and and must be of minimum 3 characters'),
-    password: Joi.string().min(6).required()
-      .error(() => 'The password is required and and must be of minimum 6 characters'),
-    isAdmin: Joi.bool().valid(true, false).required()
-      .error(() => 'Please specify if Admin or Not'),
-
     email: Joi.string().email().required().trim()
       .error(() => 'The valid email is required'),
     firstName: Joi.string().min(3).required().trim()
@@ -29,7 +17,6 @@ export function validateSignUp(req, res, next) {
       .error(() => 'The last name is required and and must be of minimum 3 characters'),
     password: Joi.string().min(6).required().trim()
       .error(() => 'The password is required and and must be of minimum 6 characters'),
-develop
   });
 
   const result = Joi.validate(req.body, schema);
@@ -44,18 +31,11 @@ develop
   next();
 }
 
- ft-signup-api-167688267
-export default validateSignUp;
-
 export function validateSignIn(req, res, next) {
   const schema = Joi.object().keys({
     email: Joi.string().email().required().error(() => 'The valid email is required'),
- ft-signin-ap-167693020
-    password: Joi.string().min(6).required().error(() => 'The password is required and and must be of minimum 6 characters'),
-
     password: Joi.string().required().trim()
       .error(() => 'The password is required '),
- develop
   });
 
   const result = Joi.validate(req.body, schema);
@@ -67,8 +47,6 @@ export function validateSignIn(req, res, next) {
   }
   next();
 }
- ft-signin-ap-167693020
-
 
 export function validateTrip(req, res, next) {
   const schema = Joi.object().keys({
@@ -100,5 +78,3 @@ export function validateTrip(req, res, next) {
   req.value.body = result.value;
   next();
 }
- develop
- develop

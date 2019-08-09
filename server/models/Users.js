@@ -1,16 +1,9 @@
 import { hashPassword } from '../middlewares/hashPassword';
- ft-signin-ap-167693020
-
-const users = [
-  {
-    token: 0,
-
 import createToken from '../helpers/createToken';
 
 const users = [
   {
     token: createToken('nico@gmail.com'),
-develop
     userId: 1,
     email: 'nico@gmail.com',
     firstName: 'nicolas',
@@ -20,10 +13,6 @@ develop
   },
 
   {
-ft-signin-ap-167693020
-
-
- develop
     token: 0,
     userId: 2,
     email: 'nicolas@gmail.com',
@@ -49,11 +38,7 @@ ft-signin-ap-167693020
     firstName: 'nick',
     lastName: 'kasolene',
     password: hashPassword('nico123'),
-ft-signin-ap-167693020
-    isAdmin: true,
-
     isAdmin: false,
-develop
   },
 ];
 
