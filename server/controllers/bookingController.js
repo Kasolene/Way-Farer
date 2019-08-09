@@ -6,7 +6,7 @@ export function bookAtrip(req, res) {
     const {
          tripId,userEmail
       } = req.body;
-
+      if(tripId && userEmail){
       const trip = trips.find(trip=>trip.tripId.toString() === tripId);
       const user  = users.find(user=>user.email === userEmail);
       if(trip){
@@ -39,6 +39,14 @@ export function bookAtrip(req, res) {
           }
         });
       }
+    } else {
+      res.status(400).send({
+        status: 400,
+        data : {
+          message : 'specify the trip id and user email please',
+        }
+      });
+    }
 }
 
 export function getAllBookings(req, res, next) {
