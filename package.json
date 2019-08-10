@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE-ENV=test nyc --reporter=html --reporter=text mocha --exit server/tests/*js",
-    "coverage": "nyc report --reporter=html --reporter=text",
     "start": "nodemon --exec babel-node ./server/index.js",
-    "lint": "eslint",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
+    "showcoverage": "start ./coverage/index.html",
+    "lint": "eslint"
+
   },
   "nyc": {
     "require": [
