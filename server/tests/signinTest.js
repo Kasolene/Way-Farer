@@ -1,9 +1,6 @@
-import assert from 'assert';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import { expect } from 'chai';
 import   app from '../index';
-import users from '../models/Users';
 
 const should = chai.should();
 chai.use(chaiHttp);
@@ -21,7 +18,7 @@ const signinDetailsEmpty = {
   password: '',
 };
 
-describe('login', () => {
+describe('Sign In', () => {
   it('it should not login with undefinned values', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signin')
@@ -38,7 +35,6 @@ describe('login', () => {
       .send(signinDetailsEmpty)
       .end((err, res) => {
         res.should.have.status(400);
-//        chai.expect(res.body.message).equal('You provided a wrong email or password');
         done();
       });
   });

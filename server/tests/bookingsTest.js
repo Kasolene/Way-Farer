@@ -24,7 +24,7 @@ const bookTripDetails = {
     userEmail : 'nicolas@gmail.com',
   };
 
-  describe('booking', () => {
+  describe('Booking', () => {
     it('it should not book a trip with undefinned values', (done) => {
       chai.request(app)
         .post('/api/v1/bookings')
@@ -36,13 +36,12 @@ const bookTripDetails = {
     });
   
   
-    it('should return a 200 status and trip data when everything is okey', (done) => {
+    it('should return a 201 status and trip data when everything is okey', (done) => {
       chai.request(app)
         .post('/api/v1/bookings')
         .send(bookTripDetailsTrue)
         .end((err, res) => {
           res.should.have.status(201);
-          //chai.expect(res.body.data.email).equal('nicolaskasolene@gmail.com');
           done();
         });
     });

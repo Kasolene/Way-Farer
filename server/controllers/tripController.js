@@ -20,8 +20,8 @@ export function createAtrip(req, res) {
     fare,
     status :'active',
   });
-  res.status(200).json({
-    status : 200,
+  res.status(201).json({
+    status : 201,
     data : trips[trips.length - 1]
   }
   );

@@ -38,7 +38,7 @@ const signupDetailsTrue = {
   password:'nicolas123',
 };
 
-describe('signup', () => {
+describe('Signup', () => {
   it('it should not create an account with undefinned values', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signup')
@@ -59,12 +59,12 @@ describe('signup', () => {
       });
   });
 
-  it('should return a 200 status and user data when everything is okey', (done) => {
+  it('should return a 201 status and user data when everything is okey', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send(signupDetailsTrue)
       .end((err, res) => {
-        res.should.have.status(200);
+        res.should.have.status(201);
         chai.expect(res.body.data.email).equal('nicolaskasolene@gmail.com');
         done();
       });

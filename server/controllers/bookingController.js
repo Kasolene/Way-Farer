@@ -22,7 +22,10 @@ export function bookAtrip(req, res) {
           userEmail,
           createdOn :Date.now(),
         });
-        res.status(201).json(bookings[bookings.length - 1]);
+        res.status(201).json({
+            status :201,
+            data : bookings[bookings.length - 1]
+        });
       } else {
         res.status(404).send({
           status: 404,

@@ -50,9 +50,9 @@ export function validateSignIn(req, res, next) {
 
 export function validateTrip(req, res, next) {
   const schema = Joi.object().keys({
-    busLicenseNumber: Joi.string().trim().strict().regex(/^[A-Za-z]{3}-[0-9]{3}-[A-Za-z]{2}$/)
+    busLicenseNumber: Joi.string().trim().strict().regex(/^[A-Za-z]{4} [0-9]{3} [A-Za-z]{4}$/)
       .required()
-      .error(() => 'The bus lincese number is required and with this format XXX-XXX-XX '),
+      .error(() => 'The bus lincese number is required and with this format XXXX XXX XXXX '),
     seatingCapacity: Joi.number().required()
       .error(() => 'The seating capacity is equired and can not be less than 1'),
     origin: Joi.string().trim()

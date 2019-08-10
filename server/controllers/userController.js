@@ -24,8 +24,8 @@ export function signUpController(req, res) {
       password: hashPassword(password),
       isAdmin :false,
     });
-    res.status(200).json({
-      status: 200,
+    res.status(201).json({
+      status: 201,
       data:users[users.length - 1]
     });
   }

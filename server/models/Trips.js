@@ -1,7 +1,7 @@
 const trips = [
   {
     tripId: 1,
-    busLicenseNumber: 'KHU-243-KG',
+    busLicenseNumber: 'R84 958 8834',
     seatingCapacity: 48,
     origin: 'Kigali',
     destination: 'Kampala',
@@ -11,7 +11,7 @@ const trips = [
 
   {
     tripId: 2,
-    busLicenseNumber: 'KHU-256-KG',
+    busLicenseNumber: 'R84 958 8834',
     seatingCapacity: 48,
     origin: 'Kigali',
     destination: 'Nairobi',
