@@ -10,13 +10,6 @@
     "showCoverage": "start coverage/lcov-report/index.html",
     "lint": "eslint"
   },
-  "nyc": {
-    "require": [
-      "@babel/register"
-    ],
-    "sourceMap": false,
-    "instrument": false
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kasolene/Way-Farer.git"
