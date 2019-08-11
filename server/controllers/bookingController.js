@@ -4,13 +4,14 @@ import users from '../models/Users';
 
 export function bookAtrip(req, res) {
     const {
-         tripId,userEmail
+         tripId,
       } = req.body;
-      if(tripId && userEmail){
+      const userEmail = req.decoded.id;
+      if(tripId){
       const trip = trips.find(trip=>trip.tripId.toString() === tripId);
       const user  = users.find(user=>user.email === userEmail);
       if(trip){
-        if(user){
+        if(trip.status !== 'canceled'){
         bookings.push({
           bookingId: bookings.length+1,
           userId : user.userId,
@@ -27,10 +28,10 @@ export function bookAtrip(req, res) {
             data : bookings[bookings.length - 1]
         });
       } else {
-        res.status(404).send({
-          status: 404,
+        res.status(403).send({
+          status: 403,
           data :{
-            message : 'specified user not found',
+            message : 'trip is already canceled',
           }
         });
       }
@@ -42,19 +43,21 @@ export function bookAtrip(req, res) {
           }
         });
       }
-    } else {
+    }
+     else {
       res.status(400).send({
         status: 400,
         data : {
-          message : 'specify the trip id and user email please',
+          message : 'specify the trip id',
         }
       });
     }
 }
 
 export function getAllBookings(req, res, next) {
-  const {userEmail} = req.query;
-  const user  = users.find(user=>user.email === userEmail);
+  const {id} = req.decoded;
+  console.log(id);
+  const user  = users.find(user=>user.email === id);
   if(user && user.isAdmin){
     res.status(200).json({
       status: 200,
@@ -63,7 +66,7 @@ export function getAllBookings(req, res, next) {
   } else if(user){
     const myBookings = [];
     bookings.forEach(element => {
-        if(element.userEmail === userEmail) myBookings.push(element);
+        if(element.userEmail === id) myBookings.push(element);
     });
     res.status(200).json({
       status: 200,

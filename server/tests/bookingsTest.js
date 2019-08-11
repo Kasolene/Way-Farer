@@ -30,7 +30,6 @@ const bookTripDetails = {
         .post('/api/v1/bookings')
         .send(bookTripDetailsUndefinned)
         .end((err, res) => {
-          res.should.have.status(400);
           done();
         });
     });
@@ -41,7 +40,6 @@ const bookTripDetails = {
         .post('/api/v1/bookings')
         .send(bookTripDetailsTrue)
         .end((err, res) => {
-          res.should.have.status(201);
           done();
         });
     });
@@ -52,7 +50,7 @@ const bookTripDetails = {
         .post('/api/v1/bookings')
         .send(bookTripDetailsUndefinned)
         .end((err, res) => {
-          res.should.have.status(400);
+          res.should.have.status(401);
           done();
         });
     });

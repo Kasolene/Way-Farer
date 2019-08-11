@@ -4,13 +4,11 @@
   "description": "WayFarer is a public bus transportation booking server. Where Clients make reservations by booking seat on trips, they can see all available trips, all their bookings and have the right to delete any of their bookings.\r # Installation",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE-ENV=test nyc --reporter=html --reporter=text mocha --exit server/tests/*js",
     "start": "nodemon --exec babel-node ./server/index.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "showcoverage": "start ./coverage/index.html",
+    "test": "nyc --reporter=text --reporter=html mocha server/tests --require @babel/polyfill --require @babel/register --timeout 10000 --exit",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "showCoverage": "start coverage/lcov-report/index.html",
     "lint": "eslint"
-
   },
   "nyc": {
     "require": [
@@ -45,6 +43,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-error-handler": "^1.1.0",
+    "istanbul": "^0.4.5",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^6.2.0",
