@@ -1,8 +1,9 @@
 import jwt from '../../node_modules/jsonwebtoken';
+import pool from '../config/configDb';
+import {signinQuery} from '../models/Queries';
 import {
   validateToken, TokenUnauthorized, notValidToken, tokenError,
 } from '../middlewares/middlewareHelper';
-import users from '../models/Users';
 
 export default function checkAdmin(req, res, next) {
   let token = req.headers['x-access-token'] || req.headers.authorization;
@@ -13,10 +14,14 @@ export default function checkAdmin(req, res, next) {
         return notValidToken(res);
       }
       req.decoded = decoded;
-      if (users.find(user => user.token === token && user.isAdmin)) next();
-      else return TokenUnauthorized(res);
+      pool.query(signinQuery([decoded.id])).then(result => {
+        if(result.rowCount>0){
+          if(result.rows[0].isadmin) next();
+          else return TokenUnauthorized(res);
+        } else return TokenUnauthorized(res);    
+    }).catch(err => {
+       return TokenUnauthorized(res);
     });
-  } else {
-    return tokenError(res);
-  }
+  });
+}  notValidToken(res);
 }
