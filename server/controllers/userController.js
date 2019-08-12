@@ -1,7 +1,7 @@
 import createToken from '../helpers/createToken';
-import { hashPassword } from '../middlewares/hashPassword';
+import { hashPassword, comparePassword } from '../middlewares/hashPassword';
 import pool from '../config/configDb';
-import { signupQuery } from '../models/Queries';
+import { signupQuery, signinQuery } from '../models/Queries';
 
 export function signUpController(req, res) {
   const {
@@ -47,3 +47,32 @@ export function signUpController(req, res) {
   })
 }
 
+export function signInController(req, res) {
+  const { email, password } = req.body;
+
+  pool.query(signinQuery([email])).then(result =>{
+
+    if(result.rowCount > 0){
+      
+      const user = result.rows[0];
+
+      if(comparePassword(password, user.password)){
+        delete result.rows[0].password;
+        delete result.rows[0].isadmin;
+        res.status(200).send({
+          status: 200,
+          data: {
+              user,
+          },
+        });
+      } else {
+        res.status(401).json({
+          status : 401,
+          data : {
+          message: 'Incorrect Email Or Password',
+          }
+        });
+      }
+    }
+  })
+}

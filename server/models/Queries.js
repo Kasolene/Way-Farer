@@ -13,3 +13,7 @@ text : 'insert into users (token, email, firstname, lastname, password, isadmin)
 values,
 });
 
+export const signinQuery = values => ({
+    text: 'select * from users where email = $1',
+    values,
+});
