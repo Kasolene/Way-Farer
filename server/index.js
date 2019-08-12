@@ -12,13 +12,6 @@ const app = express();
 const { port } = config;
 
 
-pool.query(createUserTable,(err, res) => {
-  if (err) {
-    console.log(err);
-  } else {
-  };
-});
-
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -58,6 +51,13 @@ app.use((req, res) => {
   });
 });
 
+// Create Users table
+pool.query(createUserTable,(err, res) => {
+  if (err) {
+    console.log(err);
+  } else {
+  };
+});
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
