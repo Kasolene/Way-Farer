@@ -6,7 +6,7 @@ import userRoute from './routes/userRoute';
 import tripRoute from './routes/tripRoute';
 import bookingRoute from './routes/bookingRoute';
 import pool from './config/configDb';
-import {createUserTable} from './models/Queries';
+import {createUserTable, createTripTable} from './models/Queries';
 const app = express();
 
 const { port } = config;
@@ -53,6 +53,14 @@ app.use((req, res) => {
 
 // Create Users table
 pool.query(createUserTable,(err, res) => {
+  if (err) {
+    console.log(err);
+  } else {
+  };
+});
+
+// Create Trips table
+pool.query(createTripTable ,(err, res) => {
   if (err) {
     console.log(err);
   } else {

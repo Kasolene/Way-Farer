@@ -1,11 +1,5 @@
 import Joi from 'joi';
 
-/**
-   * This function validates in credentials at the time of signing up.
-   * @param {*} req -Request to be executed or performed
-   * @param {*} res -Response to be returned
-   * @param {*} next -Skip process if satifies.
-   */
 
 export function validateSignUp(req, res, next) {
   const schema = Joi.object().keys({
@@ -49,10 +43,11 @@ export function validateSignIn(req, res, next) {
 }
 
 export function validateTrip(req, res, next) {
+  
   const schema = Joi.object().keys({
-    busLicenseNumber: Joi.string().trim().strict().regex(/^[A-Za-z]{4} [0-9]{3} [A-Za-z]{4}$/)
+    busLicenseNumber: Joi.string().trim().strict()
       .required()
-      .error(() => 'The bus lincese number is required and with this format XXXX XXX XXXX '),
+      .error(() => 'The bus lincese number is required and with this format XXXX-XXX-XXXX '),
     seatingCapacity: Joi.number().required()
       .error(() => 'The seating capacity is equired and can not be less than 1'),
     origin: Joi.string().trim()
@@ -65,8 +60,10 @@ export function validateTrip(req, res, next) {
       .error(() => 'The trip date is required "'),
     fare: Joi.number().required()
       .error(() => 'The fare is equired and can not be less than 1'),
+    status: Joi.string().trim().required()
+      .error(() => 'The status is required'),
   });
-
+  console.log('validating');
   const result = Joi.validate(req.body, schema);
   if (result.error) {
     return res.status(400).json({

@@ -1,30 +1,35 @@
-import trips from '../models/Trips';
+import pool from '../config/configDb';
+import { tripQuery} from '../models/Queries';
 
-/**
- * Adds two numbers together.
- * @param req The first number.
- * @param res num2 The second number.
- * @returns {int} The sum of the two numbers.
- */
 export function createAtrip(req, res) {
   const {
-    busLicenseNumber, seatingCapacity, origin, destination, fare, status,
+    busLicenseNumber, seatingCapacity, origin, destination, tripDate, fare, status
   } = req.body;
-  trips.push({
-    tripId: trips.length, 
-    busLicenseNumber,
-    seatingCapacity,
-    origin,
-    destination,
-    tripDate: Date(),
-    fare,
-    status :'active',
-  });
-  res.status(201).json({
-    status : 201,
-    data : trips[trips.length - 1]
-  }
-  );
+
+  pool.query(tripQuery([ busLicenseNumber, seatingCapacity, origin, destination, tripDate, fare, status])).then(result => {
+    
+    if(result.rowCount > 0){
+      res.status(201).json({
+        status: 201,
+        data:result.rows[0]
+      });
+    } else {
+      res.status(500).send({
+        status: 500,
+        data : {
+          message: 'an error occured',
+        }
+      });
+    }
+    
+  }).catch(err => {
+      res.status(500).send({
+        status: 500,
+        data : {
+          message: 'an error occured',
+        }
+      });
+    });
 }
 
 export function getAllTrips(req, res) {
