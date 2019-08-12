@@ -13,7 +13,7 @@ const users = [
   },
 
   {
-    token: 0,
+    token: createToken('nicolas@gmail.com'),
     userId: 2,
     email: 'nicolas@gmail.com',
     firstName: 'nicolas',
@@ -22,7 +22,7 @@ const users = [
     isAdmin: false,
   },
   {
-    token: 0,
+    token: createToken('nickson@gmail.com'),
     userId: 3,
     email: 'nickson@gmail.com',
     firstName: 'nickson',
@@ -32,7 +32,7 @@ const users = [
   },
   {
 
-    token: 0,
+    token: createToken('nickas@gmail.com'),
     userId: 4,
     email: 'nickas@gmail.com',
     firstName: 'nick',

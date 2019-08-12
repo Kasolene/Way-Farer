@@ -21,7 +21,7 @@ const trips = [
     status: 'active',
   },
   {
-    tripId: 2,
+    tripId: 3,
     busLicenseNumber: 'R84 958 8234',
     seatingCapacity: 48,
     origin: 'Kampala',

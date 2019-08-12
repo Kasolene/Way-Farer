@@ -55,7 +55,7 @@ export function getOneTrip(req, res) {
 export function cancelTrip(req, res) {
 
   const { tripId } = req.params;
-  const mytrip = trips.find(trip=>trip.tripId.toString() === tripId);
+  const mytrip = trips.find(trip => trip.tripId.toString() === tripId);
   if(mytrip){
     trips[mytrip.tripId-1].status = 'canceled';
     res.status(200).json({

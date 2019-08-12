@@ -57,7 +57,7 @@ export function bookAtrip(req, res) {
 export function getAllBookings(req, res, next) {
   const {id} = req.decoded;
   console.log(id);
-  const user  = users.find(user=>user.email === id);
+  const user  = users.find(user => user.email === id);
   if(user && user.isAdmin){
     res.status(200).json({
       status: 200,
