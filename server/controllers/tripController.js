@@ -1,5 +1,7 @@
 import pool from '../config/configDb';
-import { tripQuery} from '../models/Queries';
+import { tripQuery, getAllTripsQuery } from '../models/Queries';
+
+
 
 export function createAtrip(req, res) {
   const {
@@ -32,12 +34,40 @@ export function createAtrip(req, res) {
     });
 }
 
-export function getAllTrips(req, res) {
+/*export function getAllTrips(req, res) {
   res.status(200).json({
     status: 200,
     data: trips,
   });
-}
+} */
+export function getAllTrips(req, res) {
+  pool.query(getAllTripsQuery()).then(result => {
+    console.log(result)
+    if(result.rowCount > 0){
+      res.status(200).json({
+        status: 200,
+        data:result.rows[0]
+      });
+    } else {
+      res.status(404).send({
+        status: 404,
+        data : {
+          message: 'no trip found',
+        }
+      });
+    }
+    
+  }).catch(err => {
+    res.status(404).send({
+      status: 404,
+      data : {
+        message: 'no trip found',
+      }
+    });
+    });
+  }
+
+
 
 export function getOneTrip(req, res) {
   const {tripId } = req.params;

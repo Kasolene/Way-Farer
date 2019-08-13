@@ -33,6 +33,10 @@ export const createTripTable = {text : `CREATE TABLE trips (
 export const tripQuery = values => ({
     text : 'insert into trips (buslicensenumber, seatingcapacity, origin, destination, tripdate, fare, status) values ($1, $2, $3, $4, $5, $6, $7) returning *',
     values,
-    });
+});
 
+export const getAllTripsQuery = values => ({
+    text: 'select * from trips ',
+    values,
+});
 
