@@ -1,61 +1,49 @@
-import users from '../models/Users';
 import createToken from '../helpers/createToken';
-import { hashPassword, comparePassword } from '../middlewares/hashPassword';
+import { hashPassword } from '../middlewares/hashPassword';
+import pool from '../config/configDb';
+import { signupQuery } from '../models/Queries';
 
 export function signUpController(req, res) {
   const {
     email, firstName, lastName, password, isAdmin,
   } = req.body;
 
-  if (users.find(user => user.email === email)) {
-    res.status(409).send({
-      status: 409,
-      data : {
-        message: 'This email is already in use',
-      }
-    });
-  } else {
-    users.push({
-      token: createToken(email),
-      userId: users.length,
-      email,
-      firstName,
-      lastName,
-      password: hashPassword(password),
-      isAdmin :false,
-    });
-    res.status(201).json({
-      status: 201,
-      data:users[users.length - 1]
-    });
-  }
+  pool.query(signupQuery([createToken(email), email, firstName, lastName, hashPassword(password), isAdmin||false])).then(result => {
+    
+    console.log(result);
+    if(result.rowCount > 0){
+     delete result.rows[0].password;
+     delete result.rows[0].isadmin;
+      res.status(201).json({
+        status: 201,
+        data:result.rows[0]
+      });
+    } else {
+      res.status(500).send({
+        status: 500,
+        data : {
+          message: 'an error occured',
+        }
+      });
+    }
+    
+  }).catch(err => {
+      console.log(err);
+      if(err.routine === '_bt_check_unique' || err.constraint === 'users_email_key'){
+      res.status(409).send({
+        status: 409,
+        data : {
+          message: 'This email is already in use',
+        }
+      });
+    } else {
+      res.status(500).send({
+        status: 500,
+        data : {
+          message: 'an error occured',
+        }
+      });
+    }
+  })
 }
 
-export function signInController(req, res) {
-  const { email, password } = req.body;
-  const myuser = users.find(user => user.email === email && comparePassword(password, user.password));
-
-  if (myuser) {
-    const index = users.findIndex(user => user.email === email);
-    const token = createToken(email);
-    users[index].token = token;
-    myuser.token = token;
-    res.status(200).send({
-      status: 200,
-      data: {
-          token: myuser.token,
-          userId: myuser.userId,
-          email: myuser.email,
-          firstName: myuser.firstName,
-          lastName: myuser.lastName,
-      },
-    });
-  } else {
-    res.status(401).json({
-      status : 401,
-      data : {
-      message: 'Incorrect Email Or Password',
-      }
-    });
-  }
-}

@@ -1,6 +1,11 @@
 language: node_js
+  language: node_js
 node_js: 
   - "stable"
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database wayfarer-test;' -U postgres
 cache: npm
 script: 
   - npm run test

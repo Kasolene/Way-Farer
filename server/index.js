@@ -10,6 +10,7 @@ const app = express();
 
 const { port } = config;
 
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -48,7 +49,6 @@ app.use((req, res) => {
     error: 'Wrong request. Route does not exist',
   });
 });
-
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
