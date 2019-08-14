@@ -5,8 +5,7 @@ import config from './config/config';
 import userRoute from './routes/userRoute';
 import tripRoute from './routes/tripRoute';
 import bookingRoute from './routes/bookingRoute';
-import pool from './config/configDb';
-import {createUserTable} from './models/Queries';
+
 const app = express();
 
 const { port } = config;
@@ -49,14 +48,6 @@ app.use((req, res) => {
     status: 404,
     error: 'Wrong request. Route does not exist',
   });
-});
-
-// Create Users table
-pool.query(createUserTable,(err, res) => {
-  if (err) {
-    console.log(err);
-  } else {
-  };
 });
 
 app.listen(port, () => {
