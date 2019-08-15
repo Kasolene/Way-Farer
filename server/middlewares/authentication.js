@@ -16,7 +16,7 @@ class Authentication {
         email,
         is_admin,
       },
-      'nicolas',
+      process.env.SECRET_KEY,
       {
         expiresIn: '24h',
       },
@@ -33,8 +33,7 @@ class Authentication {
    * @param {*} next
    */
   static async verifyToken(req, res, next) {
-    const token = req.headers.token || req.body.token;
-
+    const token = req.headers.authorization;
     // check if token is provided
     if (!token) {
       return res.status(403).json({
@@ -47,8 +46,8 @@ class Authentication {
       // verify user provided token against existing token
       const decoded = await jwt.verify(token, process.env.SECRET_KEY);
 
-      const queryString = 'SELECT * FROM users WHERE user_id = $1';
-      const { rows } = await Db.query(queryString, [decoded.user_id]);
+      const text = 'SELECT * FROM users WHERE user_id = $1';
+      const { rows } = await Db.query(text, [decoded.user_id]);
 
       // check for valid app users
       if (!rows[0]) {

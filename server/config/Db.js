@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'test') {
 if (process.env.NODE_ENV === 'development') {
   connectionString = process.env.DEV_DB_URL;
 }
-if (process.env.NODE_ENV === 'productionS') {
+if (process.env.NODE_ENV === 'production') {
   connectionString = process.env.DATABASE_URL;
 }
 // Instantiate pool

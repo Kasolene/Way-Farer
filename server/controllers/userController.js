@@ -7,9 +7,9 @@ import { signupQuery, signinQuery } from '../models/Queries';
 class User {
   /**
        * signup a user into the app
-       * @param {*} req
-       * @param {*} res
-       * @returns {object} reflection object
+       * @param {object} req
+       * @param {object} res
+       * @returns {object}  object
        */
   static async signUp(req, res) {
     const { error } = validateInput.signupValidation(req.body);
@@ -46,7 +46,7 @@ class User {
     } catch (errors) {
       if (errors.routine === '_bt_check_unique') {
         return res.status(409).json({
-          status: 404,
+          status: 409,
           error: 'User already exist',
         });
       }
