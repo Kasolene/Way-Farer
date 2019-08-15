@@ -4,9 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DEV_DB_URL,
 });
-
+console.log(process.env.NODE_ENV);
 pool.on('connect', () => {
   console.log('connected to the db');
 });
@@ -30,6 +30,8 @@ const createTables = () => {
       console.log(err);
       pool.end();
     });
+
+  // Trips Table
   const tripsTable = `CREATE TABLE IF NOT EXISTS
   trips (
     trip_id serial primary key,

@@ -1,22 +1,45 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
 
+
 dotenv.config();
-// wayfarer  db in development
-if (process.env.NODE_ENV === 'development') {
-  module.exports = new Pool({
-    connectionString: process.env.DEV_DB_URL,
-  });
-}
-// Test Db
+let connectionString;
+
 if (process.env.NODE_ENV === 'test') {
-  module.exports = new Pool({
-    connectionString: process.env.TEST_DB_URL,
-  });
+  connectionString = process.env.TEST_DB_URL;
 }
-// production db
-if (process.env.NODE_ENV === 'production') {
-  module.exports = new Pool({
-    connectionString: process.env.DATABASE_URL,
-  });
+if (process.env.NODE_ENV === 'development') {
+  connectionString = process.env.DEV_DB_URL;
 }
+if (process.env.NODE_ENV === 'productionS') {
+  connectionString = process.env.DATABASE_URL;
+}
+// Instantiate pool
+const pool = new Pool({
+  connectionString,
+});
+
+console.log(process.env.NODE_ENV, pool);
+class Db {
+  /**
+   * query() queries database
+   *
+   * @param {string} queryString
+   * @param {*} params
+   */
+  static async query(queryString, params) {
+    return new Promise((resolve, reject) => {
+      pool
+        .query(queryString, params)
+        .then((res) => {
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  }
+}
+
+
+export default Db;
