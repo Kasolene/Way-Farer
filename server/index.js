@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import config from './config/config';
 import userRoute from './routes/userRoute';
-
+import tripRoute from './routes/tripRoute';
 
 const app = express();
 
@@ -15,8 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-// API Routes
+// Database Routes
 app.use('/api/v1/auth', userRoute);
+app.use('/api/v1', tripRoute);
 
 // Home page route
 app.get('/', (req, res) => {

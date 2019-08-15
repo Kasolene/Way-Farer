@@ -1,20 +1,10 @@
 import express from 'express';
-import { createAtrip, getAllTrips, getOneTrip, cancelTrip } from '../controllers/tripController';
-import { validateTrip } from '../middlewares/validateInput';
-import isAdmin from '../helpers/authenticateAdmin';
+import Trip from '../controllers/tripController';
+import Authentication from '../middlewares/authentication';
 
 const router = express.Router();
 
-// create a new trip
-router.post('/trip', isAdmin, validateTrip, createAtrip);
-
-// Retrieve all Trips
-router.get('/trip', getAllTrips);
-
-// Retrieve a single Trip by tripId
-router.get('/trip/:tripId', getOneTrip);
-
-// Cancel a Trip by tripId
-router.patch('/trip/:tripId', cancelTrip);
+// admin can create trip
+router.post('/trip', Authentication.verifyToken, Trip.createAtrip);
 
 export default router;

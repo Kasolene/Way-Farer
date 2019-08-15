@@ -43,6 +43,31 @@ class validateInput {
     });
     return Joi.validate(details, schema, validationOptions);
   }
+
+  /**
+   * funtion to check if trip input are valid
+   * @param {trip} object
+   */
+  static createAtrip(trip) {
+    const schema = Joi.object().keys({
+      bus_license_number: Joi.string().trim().max(12)
+        .required()
+        .error(() => 'the bus license number is required '),
+      seating_capacity: Joi.number().required()
+        .error(() => 'the seating capacity is required'),
+      origin: Joi.string().trim()
+        .required()
+        .error(() => 'the origin is required and should not be less than 3 characters and must be lowercase'),
+      destination: Joi.string().trim()
+        .required()
+        .error(() => 'the destination is required and should not be less than 3 characters and must be lowercase'),
+      trip_date: Joi.date().required()
+        .error(() => 'the trip date is required in the format "21 January, 2019"'),
+      fare: Joi.number().required()
+        .error(() => 'the fare is required and can not be less than $1'),
+    });
+    return Joi.validate(trip, schema, validationOptions);
+  }
 }
 
 
