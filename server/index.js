@@ -18,8 +18,6 @@ app.use(bodyParser.json());
 // API Routes
 app.use('/api/v1/auth', userRoute);
 
-
-
 // Home page route
 app.get('/', (req, res) => {
   res.status(200).json(
