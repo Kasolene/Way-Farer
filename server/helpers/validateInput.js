@@ -29,6 +29,21 @@ class validateInput {
     });
     return Joi.validate(user, schema, validationOptions);
   }
+
+  /**  funtion to validate login inputs
+     * @param{details} string
+     */
+  static singinValidation(details) {
+    const schema = Joi.object().keys({
+      email: Joi.string().trim().strict().email()
+        .required()
+        .error(() => 'Email is required'),
+      password: Joi.string().trim().strict().required()
+        .error(() => 'you must provide a correct password'),
+    });
+    return Joi.validate(details, schema, validationOptions);
+  }
 }
+
 
 export default validateInput;

@@ -19,7 +19,6 @@ const pool = new Pool({
   connectionString,
 });
 
-console.log(process.env.NODE_ENV, pool);
 class Db {
   /**
    * query() queries database
